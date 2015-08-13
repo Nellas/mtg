@@ -37,14 +37,14 @@ video {
     padding: 32px;
     width: 33%;
     margin: 32px;
-    float: right;
-    font-size: 1.2rem;
+    float: left;
+    font-size: 20px;
 }
 h1 {
-    font-size: 3rem;
+    font-size: 46px;
     text-transform: uppercase;
     margin-top: 0;
-    letter-spacing: .3rem;
+    letter-spacing: 5px;
 }
 #main button {
     display: block;
@@ -68,7 +68,7 @@ a {
     color: #fff;
     text-decoration: none;
     background:rgba(0,0,0,0.5);
-    padding: .5rem;
+    padding: 10px;
     transition: .6s background;
 }
 a:hover{
