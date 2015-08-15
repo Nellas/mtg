@@ -1,23 +1,23 @@
 /**
  * Created by luke on 8/13/15.
  */
-var app = angular.module('mtg', ['ng-route']).config(function($routeProvider) {
+var app = angular.module('mtg', ['ngRoute']).config(function($routeProvider) {
 
     $routeProvider
         .when('/', {
-            templateUrl:'',
-            controller: ''
+            templateUrl:'static/templates/homeTemplate.html',
+            controller: 'mainCtrl'
 
         })
 
         .when('/collection', {
-            templateUrl:'',
-            controller: ''
+            templateUrl:'static/templates/collectionTemplate.html',
+            controller: 'collectCtrl'
         })
 
         .when('/trades', {
-            templateUrl:'',
-            controller: ''
+            templateUrl:'static/templates/tradesTemplate.html',
+            controller: 'tradeCtrl'
         })
 
         .otherwise({
