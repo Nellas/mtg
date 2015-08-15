@@ -1,22 +1,28 @@
 /**
  * Created by luke on 8/13/15.
  */
-var app = angular.module('mtg', ['ngRoute']).config(function($routeProvider) {
+var app = angular.module('mtg', ['ngRoute', 'firebase']);
 
+app.constant('fb', {
+    url: '#'
+});
+
+
+app.config(function($routeProvider) {
     $routeProvider
         .when('/', {
-            templateUrl:'static/templates/homeTemplate.html',
+            templateUrl:'views/home.html',
             controller: 'mainCtrl'
 
         })
 
         .when('/collection', {
-            templateUrl:'static/templates/collectionTemplate.html',
+            templateUrl:'views/collection.html',
             controller: 'collectCtrl'
         })
 
         .when('/trades', {
-            templateUrl:'static/templates/tradesTemplate.html',
+            templateUrl:'views/trades.html',
             controller: 'tradeCtrl'
         })
 

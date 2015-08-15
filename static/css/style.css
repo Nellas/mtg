@@ -21,7 +21,7 @@ video {
     height: auto;
     z-index: -100;
     transform: translateX(-50%) translateY(-50%);
-    background: url('images/testStill.JPG') no-repeat;
+    background: url('../images/testStill.JPG') no-repeat;
     background-size: cover;
     transition: 1s opacity;
 }
@@ -78,6 +78,6 @@ a:hover{
     div{width:70%;}
 }
 @media screen and (max-device-width: 800px) {
-    html { background: url(images/testStill.JPG) #000 no-repeat center center fixed; }
+    html { background: url(../images/testStill.JPG) #000 no-repeat center center fixed; }
     #background-vid { display: none; }
 }
