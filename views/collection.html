@@ -3,17 +3,18 @@
         <h1>Collection Template</h1>
         <a href="/#/">Home</a>
         <a href="/#/trades">Trade Offers</a>
+        <div>
+            <input class="card-search" type="text" ng-model="card" placeholder="Card Name" ng-change="getCardData(card)" />
+        </div>
     </div>
     <div class="collection-graph">
         <h3>Collection Graph</h3>
     </div>
 </div>
 
-<div class="card-search">
-    <input type="text" ng-model="card" placeholder="Card Name" ng-change="getCardData(card)" />
-</div>
-
 <div class="collection-list" ng-repeat="card in cards">
-    <h3> {{card.name}} </h3>
+    <h3> Card Name: {{card.name}} <br />
+         Card Color: {{ card.color }} <br />
+         Card Text: {{ card.text }}</h3>
 
 </div>
