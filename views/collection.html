@@ -8,9 +8,12 @@
         <h3>Collection Graph</h3>
     </div>
 </div>
-<div class="collection-list">
-    <a href="{{cards.image}}" target="_blank"> <img src="{{ cards.image }}" style="width: 200px; height: 300px;" title="view image" /> </a>
-    <h3> Card Name: {{ cards.name}} <br>
-         Color: {{ cards.color }} <br>
-         Type: {{ cards.type }}</h3>
+
+<div class="card-search">
+    <input type="text" ng-model="card" placeholder="Card Name" ng-change="getCardData(card)" />
+</div>
+
+<div class="collection-list" ng-repeat="card in cards">
+    <h3> {{card.name}} </h3>
+
 </div>

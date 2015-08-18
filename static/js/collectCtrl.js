@@ -4,10 +4,10 @@
 var app = angular.module('mtg').controller('collectCtrl', function($scope, mainService) {
 
    $scope.getCardData = function() {
-        mainService.getCardData().then(function(data) {
+        mainService.getCardData($scope.card).then(function(data) {
             console.log('from the controller', data);
             $scope.cards = data;
         })
-    }
+    };
     $scope.getCardData();
 });
