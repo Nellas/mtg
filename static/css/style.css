@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    /*border: 1px solid red;*/
 }
 
 html body {
@@ -11,6 +12,7 @@ body {
     margin: 0;
     background: #000;
 }
+
 video {
     position: fixed;
     top: 50%;
@@ -29,7 +31,8 @@ video {
     opacity: .5;
 }
 
-.main-container {
+.main-view {
+    width: 100%
     font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
     font-weight: 100;
     background: rgba(0,0,0,0.3);
@@ -40,12 +43,14 @@ video {
     float: left;
     font-size: 20px;
 }
+
 h1 {
     font-size: 46px;
     text-transform: uppercase;
     margin-top: 0;
     letter-spacing: 3px;
 }
+
 #main button {
     display: block;
     width: 80%;
@@ -71,12 +76,52 @@ a {
     padding: 10px;
     transition: .6s background;
 }
+
+/* Collection Page Styling */
+.collection-view {
+    font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+    font-weight: 100%;
+    background: rgba(0,0,0,0.3);
+    color: white;
+    border: solid 1px white;
+    padding: 32px;
+    width: 45%;
+    margin: 32px;
+    float: left;
+    font-size: 20px;
+}
+
+.collection-graph {
+    font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+    font-weight: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: solid 1px white;
+    padding: 32px;
+    width: 30%;
+    margin: 32px;
+    float: right;
+    font-size: 20px;
+}
+
+.collection-list {
+    clear: both;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+
+}
+
 a:hover{
     background:rgba(0,0,0,0.9);
 }
+
+
+/* Media Queries */
 @media screen and (max-width: 500px) {
     div{width:70%;}
 }
+
 @media screen and (max-device-width: 800px) {
     html { background: url(../images/testStill.JPG) #000 no-repeat center center fixed; }
     #background-vid { display: none; }

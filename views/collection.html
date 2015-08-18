@@ -1,7 +1,16 @@
 <div>
-    <div class="main-container">
+    <div class="collection-view">
         <h1>Collection Template</h1>
         <a href="/#/">Home</a>
         <a href="/#/trades">Trade Offers</a>
     </div>
+    <div class="collection-graph">
+        <h3>Collection Graph</h3>
+    </div>
+</div>
+<div class="collection-list">
+    <a href="{{cards.image}}" target="_blank"> <img src="{{ cards.image }}" style="width: 200px; height: 300px;" title="view image" /> </a>
+    <h3> Card Name: {{ cards.name}} <br>
+         Color: {{ cards.color }} <br>
+         Type: {{ cards.type }}</h3>
 </div>
