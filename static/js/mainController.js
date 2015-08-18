@@ -3,10 +3,5 @@
  */
 var app = angular.module('mtg').controller('mainCtrl', function($scope, mainService){
 
-    var vid = document.getElementById("background-vid");
-
-    function vidFade() {
-        vid.classList.add("stopfade");
-    }
 
 });
