@@ -31,19 +31,17 @@ video {
 .nav-bar {
     margin-top: 10px;
     margin-left: 32px;
-    font-family: beleren;
+    font-family: 'Fredericka the Great', cursive;;
     font-weight: 100;
     font-size: 20px;
 }
 
 .main-view {
     width: 45%;
-    font-family: beleren;
+    font-family: 'Fredericka the Great', cursive;
     font-weight: 100;
     background: rgba(0, 0, 0, 0.3);
     color: #bb722f;
-    -webkit-text-stroke-width: 1.5px;
-    -webkit-text-stroke-color: red;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -51,6 +49,11 @@ video {
     margin: 32px;
     float: left;
     font-size: 20px;
+}
+
+.page-title {
+    width: 100%;
+    text-align: center;
 }
 
 h1 {
@@ -62,15 +65,13 @@ h1 {
 
 
 .nav-link {
-    width: 125px;
-    padding: 10px;
+    width: 150px;
+    padding: 8px;
     margin-right: 15px;
-    boder: 1px solid black;
+    border: 1px solid black;
     border-radius: 10px;
     display: inline-block;
     color: #bb722f;
-    -webkit-text-stroke-width: .5px;
-    -webkit-text-stroke-color: red;
     text-decoration: none;
     text-align: center;
     background:rgba(0, 0, 0, 0.5);
@@ -79,28 +80,6 @@ h1 {
 
 .nav-link:hover {
     background:rgba(0, 0, 0, 0.9);
-}
-
-
-/* Search Page Styling */
-
-.card-search {
-    width: 300px;
-    height: 50px;
-    margin-left: 10px;
-    padding-left: 10px;
-    border: 1px solid black;
-    background: transparent;
-    font-family: beleren;
-    font-size: 25px;
-    color: #bb722f;
-    -webkit-text-stroke-width: .5px;
-    -webkit-text-stroke-color: red;
-}
-
-.card-search:focus {
-    border: 1px solid rgba(45, 225, 132, .5));
-    background: transparent;
 }
 
 /* Collection Page Styling */
@@ -115,17 +94,15 @@ h1 {
 .colors-image {
     width: 80px;
     height: 80px;
-    margin-right: 15px;
+    margin: 15px;
     border-radius: 50px;
 }
 
 .collection-graph {
-    font-family: beleren;
+    font-family: 'Fredericka the Great', cursive;
     font-weight: 100;
     background: rgba(0, 0, 0, 0.3);
     color: #bb722f;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: red;
     border: solid 1px white;
     padding: 32px;
     width: 30%;
@@ -134,7 +111,26 @@ h1 {
     font-size: 20px;
 }
 
-.collection-list {
+/* Search Page Styling */
+
+.card-search {
+    width: 300px;
+    height: 50px;
+    margin-left: 10px;
+    padding-left: 10px;
+    border: 1px solid black;
+    background: transparent;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 25px;
+    color: #bb722f;
+}
+
+.card-search:focus {
+    border: 1px solid rgba(45, 225, 132, .5));
+    background: transparent;
+}
+
+.search-result-list {
     clear: both;
     display: flex;
     justify-content: flex-start;
@@ -151,18 +147,29 @@ h1 {
 }
 
 .card-name {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Signika', sans-serif;
     font-size: 25px;
 }
 
 .card-info {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Signika', sans-serif;
     font-size: 18px;
 }
 
-.flavor-text {
-    font-family: 'Marck Script', cursive;
-    font-size: 20px;
+.add-card-btn {
+    width: 100px;
+    height: 37px;
+    font-family: 'Signika', sans-serif;
+    font-size: 18px;
+    color: whitesmoke;
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    outline: none;
+}
+
+.add-card-btn:hover {
+    background-color: #424242;
+    color: #bb722f;
 }
 
 /* Media Queries */

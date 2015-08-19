@@ -5,14 +5,16 @@
 </div>
 <div>
     <div class="main-view">
-        <h1>Find a Card</h1>
+        <div class="page-title">
+            <h1>Find a Card</h1>
+        </div>
         <input class="card-search" type="text" ng-model="card" placeholder="Card Name" ng-change="getCardData(card)" />
     </div>
 </div>
 <div>
 </div>
 
-<div class="collection-list" ng-repeat="card in cards">
+<div class="search-result-list" ng-repeat="card in cards">
     <div class="card-image-container">
         <img class="card-image" src=" {{ card.image }} " />
     </div>
@@ -20,6 +22,7 @@
         <h2 class="card-name"> Card Name: {{ card.name }} </h2>
         <p class="card-info"> Type: {{ card.type }} </p>
         <p class="card-info"> Color: {{ card.color }} </p>
-        <p class="card-info"> Flavor Text: <span class=flavor-text> &nbsp {{ card.text }} </span> </p>
+        <p class="card-info"> Text: {{ card.text }} </p>
+        <button class="add-card-btn" ng-click="">Add Card</button>
     </div>
 </div>
