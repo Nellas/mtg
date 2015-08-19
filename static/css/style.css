@@ -10,7 +10,7 @@ html body {
 
 body {
     margin: 0;
-    background: #000;
+    background-color: #777777;
 }
 
 video {
@@ -28,13 +28,26 @@ video {
     transition: 1s opacity;
 }
 
+.nav-bar {
+    margin-top: 10px;
+    margin-left: 32px;
+    font-family: beleren;
+    font-weight: 100;
+    font-size: 20px;
+}
+
 .main-view {
-    font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+    width: 45%;
+    font-family: beleren;
     font-weight: 100;
     background: rgba(0, 0, 0, 0.3);
-    color: white;
+    color: #bb722f;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: red;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     padding: 32px;
-    width: 33%;
     margin: 32px;
     float: left;
     font-size: 20px;
@@ -49,51 +62,70 @@ h1 {
 
 
 .nav-link {
-    display: inline-block;
-    color: #fff;
-    text-decoration: none;
-    background:rgba(0, 0, 0, 0.5);
+    width: 125px;
     padding: 10px;
-    transition: .6s background;
+    margin-right: 15px;
+    boder: 1px solid black;
+    border-radius: 10px;
+    display: inline-block;
+    color: #bb722f;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: red;
+    text-decoration: none;
+    text-align: center;
+    background:rgba(0, 0, 0, 0.5);
+    transition: 1s background;
 }
 
-/* Collection Page Styling */
-.collection-view {
-    font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
-    font-weight: 100;
-    background: rgba(0, 0, 0, 0.3);
-    color: white;
-    border: solid 1px white;
-    padding: 32px;
-    width: 45%;
-    margin: 32px;
-    float: left;
-    font-size: 20px;
+.nav-link:hover {
+    background:rgba(0, 0, 0, 0.9);
 }
+
+
+/* Search Page Styling */
 
 .card-search {
     width: 300px;
     height: 50px;
     margin-left: 10px;
     padding-left: 10px;
-    border: none;
-    background: rgba(45, 225, 132, .23);
-    font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+    border: 1px solid black;
+    background: transparent;
+    font-family: beleren;
     font-size: 25px;
-    color: white;
-    font-weight: 100;
+    color: #bb722f;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: red;
 }
 
 .card-search:focus {
     border: 1px solid rgba(45, 225, 132, .5));
-    background: rgba(0, 178, 255, .23);
+    background: transparent;
+}
+
+/* Collection Page Styling */
+
+.color-nav {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.colors-image {
+    width: 80px;
+    height: 80px;
+    margin-right: 15px;
+    border-radius: 50px;
 }
 
 .collection-graph {
-    font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+    font-family: beleren;
     font-weight: 100;
     background: rgba(0, 0, 0, 0.3);
-    color: white;
+    color: #bb722f;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: red;
     border: solid 1px white;
     padding: 32px;
     width: 30%;
@@ -104,16 +136,34 @@ h1 {
 
 .collection-list {
     clear: both;
-    color: white;
     display: flex;
     justify-content: flex-start;
-
 }
 
-a:hover{
-    background:rgba(0, 0, 0, 0.9);
+.card-image-container {
+    margin-left: 5%;
 }
 
+.card-info-container {
+    margin-top: 1%;
+    margin-left: 2%;
+    color: whitesmoke;
+}
+
+.card-name {
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+}
+
+.card-info {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+}
+
+.flavor-text {
+    font-family: 'Marck Script', cursive;
+    font-size: 20px;
+}
 
 /* Media Queries */
 @media screen and (max-width: 500px) {

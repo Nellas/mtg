@@ -1,20 +1,22 @@
+<div class="nav-bar">
+    <a class="nav-link" href="/#/">Home</a>
+    <a class="nav-link" href="/#/trades">Trades</a>
+    <a class="nav-link" href="/#/search">Find a card</a>
+</div>
 <div>
-    <div class="collection-view">
-        <h1>Collection Template</h1>
-        <a class="nav-link" href="/#/">Home</a>
-        <a class="nav-link" href="/#/trades">Trade Offers</a>
-        <div>
-            <input class="card-search" type="text" ng-model="card" placeholder="Card Name" ng-change="getCardData(card)" />
+    <div class="main-view">
+        <h1>My Collection</h1>
+        <div class="color-nav-container">
+            <ul class="color-nav">
+                <li class="collection-colors"> <a href="#"> <img class="colors-image" src="static/images/white.png" /> </a> </li>
+                <li class="collection-colors"> <a href="#"> <img class="colors-image" src="static/images/blue.png" /> </a> </li>
+                <li class="collection-colors"> <a href="#"> <img class="colors-image" src="static/images/black.png" /> </a> </li>
+                <li class="collection-colors"> <a href="#"> <img class="colors-image" src="static/images/red.png" /> </a> </li>
+                <li class="collection-colors"> <a href="#"> <img class="colors-image" src="static/images/green.png" /> </a> </li>
+            </ul>
         </div>
     </div>
     <div class="collection-graph">
         <h3>Collection Graph</h3>
     </div>
-</div>
-
-<div class="collection-list" ng-repeat="card in cards">
-    <h3> Card Name: {{card.name}} <br />
-         Card Color: {{ card.color }} <br />
-         Card Text: {{ card.text }}</h3>
-
 </div>

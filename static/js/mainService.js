@@ -13,9 +13,12 @@ var app = angular.module('mtg').service('mainService', function($http, $q) {
             var returnedData = [];
             for (var i = 0; i < data.data.length; i++) {
                 returnedData.push({
+                    image: data.data[i].editions[0].image_url,
                     name: data.data[i].name,
                     color: data.data[i].colors[0],
-                    text: data.data[i].text
+                    text: data.data[i].text,
+                    cost: data.data[i].cost,
+                    type: data.data[i].types[0],
                 })
             }
             dfd.resolve(returnedData);

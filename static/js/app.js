@@ -11,19 +11,24 @@ app.constant('fb', {
 app.config(function($routeProvider) {
     $routeProvider
         .when('/', {
-            templateUrl:'views/home.html',
+            templateUrl: 'views/home.html',
             controller: 'mainCtrl'
 
         })
 
         .when('/collection', {
-            templateUrl:'views/collection.html',
+            templateUrl: 'views/collection.html',
             controller: 'collectCtrl'
         })
 
         .when('/trades', {
-            templateUrl:'views/trades.html',
+            templateUrl: 'views/trades.html',
             controller: 'tradeCtrl'
+        })
+
+        .when('/search', {
+            templateUrl: 'views/search.html',
+            controller: 'searchCtrl'
         })
 
         .otherwise({
