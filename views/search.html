@@ -8,7 +8,7 @@
         <div class="page-title">
             <h1>Find a Card</h1>
         </div>
-        <input class="card-search" type="text" ng-model="card" placeholder="Card Name" ng-change="getCardData(card)" />
+        <input class="card-search" ng-model="card" type="text" placeholder="Card Name" ng-change="getCardData(card)" />
     </div>
 </div>
 <div>
@@ -16,10 +16,10 @@
 
 <div class="search-result-list" ng-repeat="card in cards">
     <div class="card-image-container">
-        <img class="card-image" ng-model="cardImage" ng-src=" {{ card.image }} " />
+        <img class="card-image" ng-src=" {{ card.image }} " />
     </div>
     <div  class="card-info-container">
-        <h2 class="card-name" ng-model="cardName"> Card Name: {{ card.name }} </h2>
+        <h2 class="card-name"> Card Name: {{ card.name }} </h2>
         <p class="card-info"> Type: {{ card.type }} </p>
         <p class="card-info"> Color: {{ card.color }} </p>
         <p class="card-info"> Text: {{ card.text }} </p>

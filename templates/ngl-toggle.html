@@ -1,0 +1,11 @@
+<img class="collection-card-image" ng-src=" {{ val.image }} " />
+<strong class="collection-card-name"> {{ val.name }} </strong>
+<span class="collection-card-edition">TODO: add edition</span>
+<div class="collection-card-info">
+    <ul>
+        <li ng-show="hideInfo"><span class="collection-card-info-type"></span> Type: {{ val.type }} </li>
+        <li ng-show="hideInfo"><span class="collection-card-info-color"></span> Color: {{ val.color }}</li>
+        <li ng-show="hideInfo"><span class="collection-card-info-text"></span> Text: {{ val.text}} </li>
+        <li ng-show="hideInfo"><span class="collection-card-info-other"></span> Cost: TODO add cost</li>
+    </ul>
+</div>
