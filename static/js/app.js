@@ -18,7 +18,7 @@ app.config(function($routeProvider) {
 
         .when('/collection', {
             templateUrl: 'views/collection.html',
-            controller: 'collectCtrl'
+            controller: 'collectionCtrl'
         })
 
         .when('/trades', {

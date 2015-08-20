@@ -111,6 +111,52 @@ h1 {
     font-size: 20px;
 }
 
+.collection-list {
+    clear: both;
+    margin-left: 32px;
+    padding: 9px 12px;
+    /*border-bottom: 1px solid #e8e8e8;*/
+    min-height: 60px;
+    border-radius: 6px;
+}
+
+.collection-card-image {
+    width: 50px;
+    height: 80px;
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.collection-card-name {
+    float: left;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.collection-card-edition {
+    float: left;
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 18px;
+    color: #999;
+    cursor: pointer;
+}
+
+.collection-card-info {
+    clear: both;
+    margin-left: -35px;
+}
+    .collection-card-info ul {
+        list-style-type: none;
+    }
+        .collection-card-info li {
+            display: block;
+            font-size: 20px;
+        }
+
+
+
 /* Search Page Styling */
 
 .card-search {
