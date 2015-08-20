@@ -12,17 +12,5 @@ var app = angular.module('mtg').controller('collectionCtrl', function($scope, ma
         })
         .catch(function(error) {
             console.error("Error:", error);
-        });
-
-
-    // jQuery
-    $(document).ready(function() {
-
-        $('.collection-card-info').hide();
-
-        $('.collection-content').on('click', function() {
-            $('.collection-card-info', this).slideToggle('slow');
-        });
-
-    });
+        })
 });

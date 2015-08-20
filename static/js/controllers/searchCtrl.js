@@ -3,7 +3,7 @@
  */
 var app = angular.module('mtg').controller('searchCtrl', function($scope, mainService, $firebaseObject, $firebaseArray) {
 
-    //firebase
+    //Firebase
     var ref = new Firebase('https://lukemtg.firebaseio.com/collection');
 
     var syncObject = $firebaseObject(ref);
