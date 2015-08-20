@@ -16,13 +16,13 @@
 
 <div class="search-result-list" ng-repeat="card in cards">
     <div class="card-image-container">
-        <img class="card-image" src=" {{ card.image }} " />
+        <img class="card-image" ng-model="cardImage" ng-src=" {{ card.image }} " />
     </div>
     <div  class="card-info-container">
-        <h2 class="card-name"> Card Name: {{ card.name }} </h2>
+        <h2 class="card-name" ng-model="cardName"> Card Name: {{ card.name }} </h2>
         <p class="card-info"> Type: {{ card.type }} </p>
         <p class="card-info"> Color: {{ card.color }} </p>
         <p class="card-info"> Text: {{ card.text }} </p>
-        <button class="add-card-btn" ng-click="">Add Card</button>
+        <button class="add-card-btn" ng-click="addCard()">Add Card</button>
     </div>
 </div>
