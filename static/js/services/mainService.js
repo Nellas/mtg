@@ -23,8 +23,8 @@ var app = angular.module('mtg').service('mainService', function($http, $q) {
                         type: data.data[i].types[0],
                         image: data.data[i].editions[0].image_url
                     });
-
-                    //TODO console.log('before function', returnedData.color);
+                    //TODO set lands to proper color
+                    //console.log('before function', returnedData.color);
                     //if (returnedData.color === 'no color' && returnedData.name === 'Plains') {
                     //        returnedData.color = 'White';
                     //    console.log('in function', returnedData);
