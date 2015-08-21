@@ -26,7 +26,7 @@ var app = angular.module('mtg').service('mainService', function($http, $q) {
                 }
                 dfd.resolve(returnedData);
             });
-        };
+        }
         return dfd.promise;
     }
 

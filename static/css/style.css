@@ -225,9 +225,9 @@ h1 {
 
 /* Collection page annimation */
 
-.ng-hide-add         {
-    -webkit-animation-name: lightSpeedOut;
-    animation-name: lightSpeedOut;
+.ng-hide-remove {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
     -webkit-animation-duration: .5s;
     animation-duration: .5s;
     -webkit-animation-fill-mode: both;
@@ -236,37 +236,58 @@ h1 {
     animation-timing-function: ease-out;
 }
 
-.ng-hide-remove {
-    -webkit-animation-name: lightSpeedIn;
-    animation-name: lightSpeedIn;
-    -webkit-animation-duration: .75s;
-    animation-duration: .75s;
+.ng-hide-add         {
+    -webkit-animation-name: fadeOutUp;
+    animation-name: fadeOutUp;
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
 }
 
-@-webkit-keyframes lightSpeedIn {
-    0% { -webkit-transform: translateX(100%) skewX(-30deg); opacity: 0; }
-    60% { -webkit-transform: translateX(-20%) skewX(30deg); opacity: 1; }
-    80% { -webkit-transform: translateX(0%) skewX(-15deg); opacity: 1; }
-    100% { -webkit-transform: translateX(0%) skewX(0deg); opacity: 1; }
-}
-@keyframes lightSpeedIn {
-    0% { transform: translateX(100%) skewX(-30deg); opacity: 0; }
-    60% { transform: translateX(-20%) skewX(30deg); opacity: 1; }
-    80% { transform: translateX(0%) skewX(-15deg); opacity: 1; }
-    100% { transform: translateX(0%) skewX(0deg); opacity: 1; }
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+    }
 }
 
-@-webkit-keyframes lightSpeedOut {
-    0% { -webkit-transform: translateX(0%) skewX(0deg); opacity: 1; }
-    100% { -webkit-transform: translateX(100%) skewX(-30deg); opacity: 0; }
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-@keyframes lightSpeedOut {
-    0% { transform: translateX(0%) skewX(0deg); opacity: 1; }
-    100% { transform: translateX(100%) skewX(-30deg); opacity: 0; }
+
+@-webkit-keyframes fadeOutUp {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+    }
+}
+@keyframes fadeOutUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
 }
 
 /* Media Queries */
