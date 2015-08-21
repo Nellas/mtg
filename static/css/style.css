@@ -63,7 +63,6 @@ h1 {
     letter-spacing: 3px;
 }
 
-
 .nav-link {
     width: 150px;
     padding: 8px;
@@ -81,81 +80,6 @@ h1 {
 .nav-link:hover {
     background:rgba(0, 0, 0, 0.9);
 }
-
-/* Collection Page Styling */
-
-.color-nav {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    list-style-type: none;
-}
-
-.colors-image {
-    width: 80px;
-    height: 80px;
-    margin: 15px;
-    border-radius: 50px;
-}
-
-.collection-graph {
-    font-family: 'Fredericka the Great', cursive;
-    font-weight: 100;
-    background: rgba(0, 0, 0, 0.3);
-    color: #bb722f;
-    border: solid 1px white;
-    padding: 32px;
-    width: 30%;
-    margin: 32px;
-    float: right;
-    font-size: 20px;
-}
-
-.collection-list {
-    clear: both;
-    margin-left: 32px;
-    padding: 9px 12px;
-    /*border-bottom: 1px solid #e8e8e8;*/
-    min-height: 60px;
-    border-radius: 6px;
-}
-
-.collection-card-image {
-    width: 50px;
-    height: 80px;
-    float: left;
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-.collection-card-name {
-    float: left;
-    font-size: 25px;
-    cursor: pointer;
-}
-
-.collection-card-edition {
-    float: left;
-    margin-top: 5px;
-    margin-left: 5px;
-    font-size: 18px;
-    color: #999;
-    cursor: pointer;
-}
-
-.collection-card-info {
-    clear: both;
-    margin-left: -35px;
-}
-    .collection-card-info ul {
-        list-style-type: none;
-    }
-        .collection-card-info li {
-            display: block;
-            font-size: 20px;
-        }
-
-
 
 /* Search Page Styling */
 
@@ -218,7 +142,133 @@ h1 {
     color: #bb722f;
 }
 
+/* Collection Page Styling */
+
+.color-nav {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.colors-image {
+    width: 80px;
+    height: 80px;
+    margin: 15px;
+    border-radius: 50px;
+}
+
+.collection-graph {
+    font-family: 'Fredericka the Great', cursive;
+    font-weight: 100;
+    background: rgba(0, 0, 0, 0.3);
+    color: #bb722f;
+    border: solid 1px white;
+    padding: 32px;
+    width: 30%;
+    margin: 32px;
+    float: right;
+    font-size: 20px;
+}
+
+.collection-list {
+    clear: both;
+    margin-left: 32px;
+    padding: 9px 12px;
+    min-height: 60px;
+    border-radius: 6px;
+}
+
+.collection-card-image {
+    width: 50px;
+    height: 80px;
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.collection-card-name {
+    float: left;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.collection-card-edition {
+    float: left;
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 18px;
+    color: #999;
+    cursor: pointer;
+}
+
+.collection-card-info {
+    clear: both;
+    margin-left: -35px;
+}
+.collection-card-info ul {
+    list-style-type: none;
+}
+.collection-card-info li {
+    display: block;
+    font-size: 20px;
+}
+
+.add-deck-btn {
+    margin: 8px 0 8px 0;
+    padding: 5px;
+    border-radius: 6px;
+    font-family: 'Signika', sans-serif;
+}
+
+/* Collection page annimation */
+
+.ng-hide-add         {
+    -webkit-animation-name: lightSpeedOut;
+    animation-name: lightSpeedOut;
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+}
+
+.ng-hide-remove {
+    -webkit-animation-name: lightSpeedIn;
+    animation-name: lightSpeedIn;
+    -webkit-animation-duration: .75s;
+    animation-duration: .75s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+}
+
+@-webkit-keyframes lightSpeedIn {
+    0% { -webkit-transform: translateX(100%) skewX(-30deg); opacity: 0; }
+    60% { -webkit-transform: translateX(-20%) skewX(30deg); opacity: 1; }
+    80% { -webkit-transform: translateX(0%) skewX(-15deg); opacity: 1; }
+    100% { -webkit-transform: translateX(0%) skewX(0deg); opacity: 1; }
+}
+@keyframes lightSpeedIn {
+    0% { transform: translateX(100%) skewX(-30deg); opacity: 0; }
+    60% { transform: translateX(-20%) skewX(30deg); opacity: 1; }
+    80% { transform: translateX(0%) skewX(-15deg); opacity: 1; }
+    100% { transform: translateX(0%) skewX(0deg); opacity: 1; }
+}
+
+@-webkit-keyframes lightSpeedOut {
+    0% { -webkit-transform: translateX(0%) skewX(0deg); opacity: 1; }
+    100% { -webkit-transform: translateX(100%) skewX(-30deg); opacity: 0; }
+}
+@keyframes lightSpeedOut {
+    0% { transform: translateX(0%) skewX(0deg); opacity: 1; }
+    100% { transform: translateX(100%) skewX(-30deg); opacity: 0; }
+}
+
 /* Media Queries */
+
 @media screen and (max-width: 500px) {
     div{width:70%;}
 }

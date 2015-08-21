@@ -23,5 +23,16 @@
 
 
 <div class="collection-list">
-    <ngl-toggle class="collection-content" ng-repeat="(key, val) in collectionData"> </ngl-toggle>
+    <div class="collection-content" ng-repeat="(key, val) in collectionData">
+        <ngl-toggle></ngl-toggle>
+        <div class="collection-card-info">
+            <ul ng-show="hideInfo">
+                <li><button class="add-deck-btn">Add Card to Deck</button></li>
+                <li><span class="collection-card-info-type"></span> Type: {{ val.type }} </li>
+                <li><span class="collection-card-info-color"></span> Color: {{ val.color }}</li>
+                <li><span class="collection-card-info-text"></span> Text: {{ val.text}} </li>
+                <li><span class="collection-card-info-other"></span> Cost: TODO add cost</li>
+            </ul>
+        </div>
+    </div>
 </div>

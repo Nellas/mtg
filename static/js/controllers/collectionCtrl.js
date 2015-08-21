@@ -12,5 +12,5 @@ var app = angular.module('mtg').controller('collectionCtrl', function($scope, ma
         })
         .catch(function(error) {
             console.error("Error:", error);
-        })
+        });
 });
