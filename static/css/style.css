@@ -209,6 +209,7 @@ h1 {
 }
 .collection-card-info ul {
     list-style-type: none;
+
 }
 .collection-card-info li {
     display: block;
@@ -228,8 +229,8 @@ h1 {
 .ng-hide-remove {
     -webkit-animation-name: fadeInDown;
     animation-name: fadeInDown;
-    -webkit-animation-duration: .5s;
-    animation-duration: .5s;
+    -webkit-animation-duration: .2s;
+    animation-duration: .2s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
     -webkit-animation-timing-function: ease-out;
@@ -239,8 +240,8 @@ h1 {
 .ng-hide-add         {
     -webkit-animation-name: fadeOutUp;
     animation-name: fadeOutUp;
-    -webkit-animation-duration: .5s;
-    animation-duration: .5s;
+    -webkit-animation-duration: .2s;
+    animation-duration: .2s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
     -webkit-animation-timing-function: ease-out;
@@ -279,6 +280,7 @@ h1 {
         -webkit-transform: translateY(-20px);
     }
 }
+
 @keyframes fadeOutUp {
     0% {
         opacity: 1;

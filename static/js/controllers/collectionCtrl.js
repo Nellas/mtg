@@ -32,6 +32,10 @@ var app = angular.module('mtg').controller('collectionCtrl', function($scope, ma
         });
     };
 
-    //TODO return firebase data as an array or crate custom filter to filter object.
+    //scope
+    $scope.searchTerm = '';
 
+    $scope.setSearchTerm = function(color) {
+        return $scope.searchTerm = color;
+    }
 });

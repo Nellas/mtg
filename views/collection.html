@@ -3,27 +3,26 @@
     <a class="nav-link" href="/#/trades">Trades</a>
     <a class="nav-link" href="/#/search">Find a card</a>
 </div>
-    <div class="main-view">
-        <div class="page-title">
-            <h1>My Collection</h1>
-        </div>
-        <div class="color-nav-container">
-            <ul class="color-nav">
-                <li class="collection-colors"> <img class="colors-image" src="static/images/white.png" ng-click="setSearchTerm('white')" /> </li>
-                <li class="collection-colors"> <img class="colors-image" src="static/images/blue.png" /> </a> </li>
-                <li class="collection-colors"> <img class="colors-image" src="static/images/black.png" /> </a> </li>
-                <li class="collection-colors"> <img class="colors-image" src="static/images/red.png" /> </a> </li>
-                <li class="collection-colors"> <img class="colors-image" src="static/images/green.png" /> </a> </li>
-            </ul>
-        </div>
+<div class="main-view">
+    <div class="page-title">
+        <h1>My Collection</h1>
     </div>
-    <div class="collection-graph">
-        <h3>Collection Graph</h3>
+    <div class="color-nav-container">
+        <ul class="color-nav">
+            <li class="collection-colors"> <img class="colors-image" src="static/images/white.png" ng-click="setSearchTerm('white')" /> </li>
+            <li class="collection-colors"> <img class="colors-image" src="static/images/blue.png" ng-click="setSearchTerm('blue')" /> </li>
+            <li class="collection-colors"> <img class="colors-image" src="static/images/black.png" ng-click="setSearchTerm('black')" /> </li>
+            <li class="collection-colors"> <img class="colors-image" src="static/images/red.png" ng-click="setSearchTerm('red')" /> </li>
+            <li class="collection-colors"> <img class="colors-image" src="static/images/green.png" ng-click="setSearchTerm('green')" /> </li>
+            <li class="collection-colors"> <img class="colors-image" src="static/images/colorless.png" ng-click="setSearchTerm('no color')" /> </li>
+        </ul>
     </div>
-
-
+</div>
+<div class="collection-graph">
+    <h3>Collection Graph</h3>
+</div>
 <div class="collection-list">
-    <div class="collection-content" ng-repeat="val in collectionData">
+    <div class="collection-content" ng-repeat="val in collectionData | filter: searchTerm">
         <ngl-toggle></ngl-toggle>
         <div class="collection-card-info">
             <ul ng-show="hideInfo">

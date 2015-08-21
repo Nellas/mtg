@@ -9,10 +9,7 @@ var app = angular.module('mtg').directive('nglToggle', function() {
             elem.on('click', function() {
                 scope.hideInfo = !scope.hideInfo;
                 scope.$apply();
-
             })
         }
     }
-
-
 });

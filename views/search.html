@@ -11,9 +11,6 @@
         <input class="card-search" ng-model="card" type="text" placeholder="Card Name" ng-change="getCardData(card)" />
     </div>
 </div>
-<div>
-</div>
-
 <div class="search-result-list" ng-repeat="card in cards">
     <div class="card-image-container">
         <img class="card-image" ng-src=" {{ card.image }} " />

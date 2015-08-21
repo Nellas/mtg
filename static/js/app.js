@@ -12,7 +12,6 @@ app.config(function($routeProvider) {
         .when('/', {
             templateUrl: 'views/home.html',
             controller: 'mainCtrl'
-
         })
 
         .when('/collection', {
