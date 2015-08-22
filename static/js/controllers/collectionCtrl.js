@@ -4,10 +4,9 @@
 
 var app = angular.module('mtg').controller('collectionCtrl', function($scope, mainService, $firebaseObject, $firebaseArray){
 
-    // Firebase
-    var ref = new Firebase("https://lukemtg.firebaseio.com/collection");
-    var arr = $firebaseArray(ref);
-    arr.$loaded()
+    var collectionRef = new Firebase("https://lukemtg.firebaseio.com/collection");
+    $scope.collection = $firebaseArray(collectionRef);
+    $scope.collection.$loaded()
         .then(function(data) {
             $scope.collectionData = data;
         })
@@ -16,26 +15,23 @@ var app = angular.module('mtg').controller('collectionCtrl', function($scope, ma
         });
 
     var deckRef = new Firebase("https://lukemtg.firebaseio.com/deck");
-
-    var syncObject = $firebaseObject(deckRef);
-
-    syncObject.$bindTo($scope, "addCard()");
-
     $scope.deck = $firebaseArray(deckRef);
-
-    $scope.addCard = function() {
+    $scope.addCard = function(card) {
         $scope.deck.$add({
-            image: this.val.image,
-            name: this.val.name,
-            type: this.val.type,
-            color: this.val.color,
-            text: this.val.text
+            image: card.image,
+            name: card.name,
+            type: card.type,
+            color: card.color,
+            text: card.text,
+            amount: card.amount
         });
     };
 
-    //scope
-    $scope.searchTerm = '';
+    $scope.removeCard = function(card) {
+        $scope.collection.$remove(card);
+    };
 
+    $scope.searchTerm = '';
     $scope.setSearchTerm = function(color) {
         return $scope.searchTerm = color;
     }

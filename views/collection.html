@@ -22,16 +22,16 @@
     <h3>Collection Graph</h3>
 </div>
 <div class="collection-list">
-    <div class="collection-content" ng-repeat="val in collectionData | filter: searchTerm">
+    <div class="collection-content" ng-repeat="card in collectionData | filter: searchTerm">
         <ngl-toggle></ngl-toggle>
         <div class="collection-card-info">
             <ul ng-show="hideInfo">
-                <li><button class="add-deck-btn" ng-click="addCard()">Add Card to Deck</button></li>
-                <li><span class="collection-card-info-type"></span> Type: {{ val.type }} </li>
-                <li><span class="collection-card-info-color"></span> Color: {{ val.color }}</li>
-                <li><span class="collection-card-info-text"></span> Text: {{ val.text}} </li>
-                <!-- TODO add mana cose to card info -->
-                <li><span class="collection-card-info-other"></span> Cost: (Mana Cost)</li>
+                <li><button class="add-deck-btn" ng-click="addCard(card)">Add Card to Deck</button></li>
+                <li><span class="collection-card-info-type"></span> Type: {{ card.type }} </li>
+                <li><span class="collection-card-info-color"></span> Color: {{ card.color }}</li>
+                <li><span class="collection-card-info-text"></span> Text: {{ card.text}} </li>
+                <li><span class="collection-card-info-other"></span> You have {{ card.amount }} of this card.</li>
+                <li><button class="remove-btn" ng-click="removeCard(card)">Remove Card</button></li>
             </ul>
         </div>
     </div>

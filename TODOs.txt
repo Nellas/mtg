@@ -1,9 +1,8 @@
-* Get amount working
-* add delete button on collection
 * make deck page
 * sample hand logic
 * get basic lands sorting to proper color
-* show both colors for duel color cads
+* show both colors for dual color cads
 * styling
 * video
-*
+* add mana cost to card data and replace brackets and symbols with readable words or numbers (ie Tap, Mountain, Swamp).
+* add edition to card data
