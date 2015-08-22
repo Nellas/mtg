@@ -1,0 +1,9 @@
+* Get amount working
+* add delete button on collection
+* make deck page
+* sample hand logic
+* get basic lands sorting to proper color
+* show both colors for duel color cads
+* styling
+* video
+*

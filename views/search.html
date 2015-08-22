@@ -20,6 +20,7 @@
         <p class="card-info"> Type: {{ card.type }} </p>
         <p class="card-info"> Color: {{ card.color }} </p>
         <p class="card-info"> Text: {{ card.text }} </p>
-        <button class="add-card-btn" ng-click="addCard()">Add Card</button>
+        <button class="add-card-btn" ng-click="addCard(card)">Add Card</button>
+        <select class="card-amount" ng-model="card.amount" ng-init="card.amount = options[0].value" ng-options="option.key as option.value for option in options"></select>
     </div>
 </div>

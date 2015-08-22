@@ -1,6 +1,7 @@
 /**
  * Created by luke on 8/20/15.
  */
+
 var app = angular.module('mtg').directive('nglToggle', function() {
     return {
         templateUrl: 'templates/ngl-toggle.html',
