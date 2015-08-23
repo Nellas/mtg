@@ -20,9 +20,9 @@ app.config(function($routeProvider) {
             controller: 'collectionCtrl'
         })
 
-        .when('/trades', {
-            templateUrl: 'views/trades.html',
-            controller: 'tradeCtrl'
+        .when('/deck', {
+            templateUrl: 'views/deck.html',
+            controller: 'deckCtrl'
         })
 
         .when('/search', {

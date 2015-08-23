@@ -2,14 +2,12 @@
  * Created by luke on 8/15/15.
  */
 
-var app = angular.module('mtg').controller('searchCtrl', function($scope, mainService, $firebaseObject, $firebaseArray) {
+var app = angular.module('mtg').controller('searchCtrl', function($scope, mainService, $firebaseArray) {
 
     var collectionRef = new Firebase('https://lukemtg.firebaseio.com/collection');
-
     $scope.collection = $firebaseArray(collectionRef);
 
-    $scope.options = [
-        {
+    $scope.options = [{
             key: '1', value: '1'
         },
         {
@@ -23,8 +21,7 @@ var app = angular.module('mtg').controller('searchCtrl', function($scope, mainSe
         },
         {
             key: '5+', value: '5+'
-        }
-    ];
+        }];
 
     $scope.addCard = function(card) {
         $scope.collection.$add({
@@ -37,7 +34,6 @@ var app = angular.module('mtg').controller('searchCtrl', function($scope, mainSe
         });
     };
 
-    //API Requests
    $scope.getCardData = function() {
         mainService.getCardData($scope.card).then(function(data) {
             console.log('from the controller', data);

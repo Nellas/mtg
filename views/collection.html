@@ -1,6 +1,6 @@
 <div class="nav-bar">
     <a class="nav-link" href="/#/">Home</a>
-    <a class="nav-link" href="/#/trades">Trades</a>
+    <a class="nav-link" href="/#/deck">Deck Test</a>
     <a class="nav-link" href="/#/search">Find a card</a>
 </div>
 <div class="main-view">
@@ -26,11 +26,14 @@
         <ngl-toggle></ngl-toggle>
         <div class="collection-card-info">
             <ul ng-show="hideInfo">
-                <li><button class="add-deck-btn" ng-click="addCard(card)">Add Card to Deck</button></li>
+                <li>
+                    <button class="add-deck-btn" ng-click="addCard(card)">Add Card to Deck</button>
+                    <select class="card-amount" ng-model="card.deckAmount" ng-init="card.deckAmount = options[0].value" ng-options="option.key as option.value for option in options"></select>
+                </li>
+                <li><span class="collection-card-info-other"></span> You have {{ card.amount }} of this card.</li>
                 <li><span class="collection-card-info-type"></span> Type: {{ card.type }} </li>
                 <li><span class="collection-card-info-color"></span> Color: {{ card.color }}</li>
                 <li><span class="collection-card-info-text"></span> Text: {{ card.text}} </li>
-                <li><span class="collection-card-info-other"></span> You have {{ card.amount }} of this card.</li>
                 <li><button class="remove-btn" ng-click="removeCard(card)">Remove Card</button></li>
             </ul>
         </div>
