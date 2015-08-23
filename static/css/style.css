@@ -292,6 +292,17 @@ h1 {
     }
 }
 
+/* Deck Page Stying */
+
+.sample-hand li {
+    display: inline;
+    list-style-type: none;
+}
+
+.sample-hand li img {
+    width: 49px;
+    height: 89px;
+}
 /* Media Queries */
 
 @media screen and (max-width: 500px) {

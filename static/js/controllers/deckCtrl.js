@@ -7,7 +7,6 @@ var app = angular.module('mtg').controller('deckCtrl', function($scope, mainServ
     var deckRef = new Firebase('https://lukemtg.firebaseio.com/deck');
     $scope.deck = $firebaseArray(deckRef);
     $scope.totalDeckCards = 0;
-    $scope.sampleHand = [];
     $scope.deck.$loaded()
         .then(function(data) {
             $scope.deckData = data;
@@ -30,10 +29,20 @@ var app = angular.module('mtg').controller('deckCtrl', function($scope, mainServ
 
 
     $scope.drawHand = function(deck) {
+        $scope.sampleHand = [];
         for (var i = 0; i < 7; i++) {
             $scope.sampleHand.push(deck.splice(getRandNum(), 1)[0]);
         }
-        console.log($scope.sampleHand);
+        $scope.deck.$loaded()
+            .then(function(data) {
+                $scope.deckData = data;
+                for (var i = 0; i < data.length; i++) {
+                    $scope.totalDeckCards += parseInt(data[i].deckAmount);
+                }
+            })
+            .catch(function(error) {
+                console.error("Error:", error);
+            });
         return $scope.sampleHand;
     }
 

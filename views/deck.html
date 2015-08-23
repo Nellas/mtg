@@ -12,6 +12,9 @@
 <div class="collection-graph">
     <h3>Sample Hand</h3>
     <button class="sample-hand-btn" ng-click="drawHand(deckData)">Draw Sample Hand</button>
+    <ul class="sample-hand">
+        <li ng-repeat="sample in sampleHand" > <img src="{{ sample.image }} "</li>
+    </ul>
 </div>
 <div class="collection-list">
     <div class="collection-content" ng-repeat="card in deckData">
