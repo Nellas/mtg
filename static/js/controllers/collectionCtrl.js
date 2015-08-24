@@ -16,6 +16,7 @@ var app = angular.module('mtg').controller('collectionCtrl', function($scope, ma
 
     var deckRef = new Firebase("https://lukemtg.firebaseio.com/deck");
     $scope.deck = $firebaseArray(deckRef);
+
     $scope.addCard = function(card) {
         $scope.deck.$add({
             image: card.image,
@@ -25,7 +26,8 @@ var app = angular.module('mtg').controller('collectionCtrl', function($scope, ma
             text: card.text,
             deckAmount: card.deckAmount
         });
-    };
+        i
+    }
 
     $scope.removeCard = function(card) {
         $scope.collection.$remove(card);
