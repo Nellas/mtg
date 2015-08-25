@@ -26,8 +26,7 @@ var app = angular.module('mtg').controller('collectionCtrl', function($scope, ma
             text: card.text,
             deckAmount: card.deckAmount
         });
-        i
-    }
+    };
 
     $scope.removeCard = function(card) {
         $scope.collection.$remove(card);

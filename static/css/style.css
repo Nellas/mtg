@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    /*border: 1px solid red;*/
+    border: 1px solid red;
 }
 
 html body {
@@ -9,8 +9,8 @@ html body {
 }
 
 body {
-    margin: 0;
     background-color: #777777;
+    margin: 0;
 }
 
 video {
@@ -26,6 +26,10 @@ video {
     background: url('../images/testStill.JPG') no-repeat;
     background-size: cover;
     transition: 1s opacity;
+}
+
+.views {
+    width: 100%;
 }
 
 .nav-bar {
@@ -144,87 +148,39 @@ h1 {
 
 /* Collection Page Styling */
 
-.color-nav {
+.wrapper {
+    background-image: url('../images/mountain.png');
+    height: auto;
+    /*min-height: 1200px;*/
     display: flex;
     justify-content: center;
-    flex-direction: row;
-    list-style-type: none;
+    flex-wrap: wrap;
 }
 
-.colors-image {
-    width: 80px;
-    height: 80px;
-    margin: 15px;
-    border-radius: 50px;
-    cursor: pointer;
+.header {
+    width: 100%;
+    height: 20%;
+    background: tomato;
 }
 
-.collection-graph {
-    font-family: 'Fredericka the Great', cursive;
-    font-weight: 100;
-    background: rgba(0, 0, 0, 0.3);
-    color: #bb722f;
-    border: solid 1px white;
-    padding: 32px;
-    width: 30%;
-    margin: 32px;
-    float: right;
-    font-size: 20px;
+.collection-container {
+    width: 65%;
+    height: 500px;
+    background: black;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
-.collection-list {
-    clear: both;
-    margin-left: 32px;
-    padding: 9px 12px;
-    min-height: 60px;
-    border-radius: 6px;
+.footer {
+    width: 100%;
+    min-height: 15%;
 }
 
-.collection-card-image {
-    width: 50px;
-    height: 80px;
-    float: left;
-    margin-right: 10px;
-    cursor: pointer;
-}
 
-.collection-card-name {
-    float: left;
-    font-size: 25px;
-    cursor: pointer;
-}
 
-.collection-card-edition {
-    float: left;
-    margin-top: 5px;
-    margin-left: 5px;
-    font-size: 18px;
-    color: #999;
-    cursor: pointer;
-}
 
-.collection-card-info {
-    clear: both;
-    margin-left: -35px;
-}
-.collection-card-info ul {
-    list-style-type: none;
-
-}
-.collection-card-info li {
-    display: block;
-    font-size: 20px;
-}
-
-.add-deck-btn {
-    margin: 8px 0 8px 0;
-    padding: 5px;
-    border-radius: 4px;
-    font-family: 'Signika', sans-serif;
-    outline: none;
-}
-
-/* Collection page annimation */
+/* Collection page animation */
 
 .ng-hide-remove {
     -webkit-animation-name: fadeInDown;

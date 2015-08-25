@@ -5,30 +5,30 @@
 var app = angular.module('mtg').service('mainService', function($http, $q) {
 
     function editResolve(data, dfd) {
-        for (var i = 0; i < data.length; i++) {
-            switch(data[i].name) {
+        data.forEach(function(data) {
+            switch(data.name) {
                 case 'Plains':
-                    data[i].image = 'https://image.deckbrew.com/mtg/multiverseid/143620.jpg';
-                    data[i].color = 'white';
+                    data.image = 'https://image.deckbrew.com/mtg/multiverseid/143620.jpg';
+                    data.color = 'white';
                     break;
                 case 'Island':
-                    data[i].image = 'https://image.deckbrew.com/mtg/multiverseid/143619.jpg';
-                    data[i].color = 'blue';
+                    data.image = 'https://image.deckbrew.com/mtg/multiverseid/143619.jpg';
+                    data.color = 'blue';
                     break;
                 case 'Mountain':
-                    data[i].image = 'https://image.deckbrew.com/mtg/multiverseid/25966.jpg';
-                    data[i].color = 'red';
+                    data.image = 'https://image.deckbrew.com/mtg/multiverseid/25966.jpg';
+                    data.color = 'red';
                     break;
                 case 'Swamp':
-                    data[i].image = 'https://image.deckbrew.com/mtg/multiverseid/276448.jpg';
-                    data[i].color = 'black';
+                    data.image = 'https://image.deckbrew.com/mtg/multiverseid/276448.jpg';
+                    data.color = 'black';
                     break;
                 case 'Forest':
-                    data[i].image= 'https://image.deckbrew.com/mtg/multiverseid/276468.jpg';
-                    data[i].color = 'green';
+                    data.image= 'https://image.deckbrew.com/mtg/multiverseid/276468.jpg';
+                    data.color = 'green';
                     break;
             }
-        }
+        });
         dfd.resolve(data);
     }
 
