@@ -8,7 +8,9 @@
     </header>
     <h1>My Collection</h1>
     <section class="collection-stats">
-        <img style="width: 700px; height: 400px; background: transparent;" src="static/images/bar-graph.png" />
+        <div class="chart-container">
+            <linechart data="chartData" options="chartOptions"></linechart>
+        </div>
         <div class="color-nav-container">
             <ul class="color-nav">
                 <li class="collection-colors"> <img class="colors-image" src="static/images/white.png" ng-click="setSearchTerm('white')" /> </li>
@@ -36,46 +38,3 @@
         </div>
     </section>
 </div>
-
-
-
-
-
-
-
-<!--<div class="main-view">-->
-    <!--<div>-->
-        <!--<h1>My Collection</h1>-->
-    <!--</div>-->
-    <!--<div class="collection-graph">-->
-        <!--<img style="width: 700px; height: 400px;" src="static/images/bar-graph.png" />-->
-    <!--</div>-->
-    <!--<div class="color-nav-container">-->
-        <!--<ul class="color-nav">-->
-            <!--<li class="collection-colors"> <img class="colors-image" src="static/images/white.png" ng-click="setSearchTerm('white')" /> </li>-->
-            <!--<li class="collection-colors"> <img class="colors-image" src="static/images/blue.png" ng-click="setSearchTerm('blue')" /> </li>-->
-            <!--<li class="collection-colors"> <img class="colors-image" src="static/images/black.png" ng-click="setSearchTerm('black')" /> </li>-->
-            <!--<li class="collection-colors"> <img class="colors-image" src="static/images/red.png" ng-click="setSearchTerm('red')" /> </li>-->
-            <!--<li class="collection-colors"> <img class="colors-image" src="static/images/green.png" ng-click="setSearchTerm('green')" /> </li>-->
-            <!--<li class="collection-colors"> <img class="colors-image" src="static/images/colorless.png" ng-click="setSearchTerm('no color')" /> </li>-->
-        <!--</ul>-->
-    <!--</div>-->
-<!--</div>-->
-<!--<div class="collection-list">-->
-    <!--<div class="collection-content" ng-repeat="card in collectionData | filter: searchTerm">-->
-        <!--<ngl-toggle></ngl-toggle>-->
-        <!--<div class="collection-card-info">-->
-            <!--<ul ng-show="hideInfo">-->
-                <!--<li>-->
-                    <!--<button class="add-deck-btn" ng-click="addCard(card)">Add Card to Deck</button>-->
-                    <!--<select class="card-amount" ng-model="card.deckAmount" ng-init="card.deckAmount = options[0].value" ng-options="option.key as option.value for option in options"></select>-->
-                <!--</li>-->
-                <!--<li><span class="collection-card-info-other"></span> You have {{ card.amount }} of this card.</li>-->
-                <!--<li><span class="collection-card-info-type"></span> Type: {{ card.type }} </li>-->
-                <!--<li><span class="collection-card-info-color"></span> Color: {{ card.color }}</li>-->
-                <!--<li><span class="collection-card-info-text"></span> Text: {{ card.text}} </li>-->
-                <!--<li><button class="remove-btn" ng-click="removeCard(card)">Remove Card</button></li>-->
-            <!--</ul>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->

@@ -85,12 +85,9 @@ h1 {
     flex-wrap: wrap;
 }
 
-.collection-stats img {
-    width: 90%;
-    height: auto;
-    margin-bottom: 10px;
-    /* TODO make this image a real graph in a div */
-
+.chart-container {
+    width: 80%;
+    height: 500px;
  }
 
 .color-nav {

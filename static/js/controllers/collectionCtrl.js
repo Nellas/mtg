@@ -49,4 +49,62 @@ var app = angular.module('mtg').controller('collectionCtrl', function($scope, ma
         {
             key: '4', value: '4'
         }];
+
+    $scope.chartData = [
+        {   x: 0,
+            val_0: 0
+        },
+        {
+            x: 1,
+            val_0: 44
+        },
+        {
+            x: 2,
+            val_0: 61
+        },
+        {
+            x: 3,
+            val_0: 49
+        },
+        {
+            x: 4,
+            val_0: 54
+        },
+        {
+            x: 5,
+            val_0: 49
+        },
+        {
+            x: 6,
+            val_0: 31
+        }
+
+    ];
+
+    $scope.chartOptions = {
+        stacks: [
+            {
+                axis: "y",
+                series: [
+                    0,
+                    "id_0"
+                ]
+            }
+        ],
+        lineMode: "cardinal",
+        series: [
+            {
+                id: "id_0",
+                y: "val_0",
+                label: "tom",
+                type: "column",
+                color: "tomato"
+            }
+        ],
+        tooltip: {mode: 'scrubber', formatter: function(x, y, series) {return 'Total';}},
+        drawLegend: false,
+        drawDots: false,
+        columnsHGap: 5
+    };
+
 });
