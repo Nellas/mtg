@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+    /*border: 1px solid red;*/
+}
+
+html body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background: url('../images/testStill.JPG') no-repeat;
+    background-size: cover;
+    transition: 1s opacity;
+}
+
+.nav-bar {
+    font-family: 'Fredericka the Great', cursive;;
+    font-weight: 100;
+    font-size: 20px;
+}
+
+.nav-bar a {
+    width: 150px;
+    padding: 8px;
+    margin-right: 15px;
+    border: 2px solid #bb722f;
+    border-radius: 10px;
+    display: inline-block;
+    color: #bb722f;
+    text-decoration: none;
+    text-align: center;
+    background: transparent;
+    transition: .2s background;
+}
+
+.nav-bar a:hover {
+    background:rgba(53, 122, 132, 0.5);
+    border: 2px solid #FFE7B3;
+}
+
+h1 {
+    font-size: 46px;
+    color: #bb722f;
+    text-transform: uppercase;
+    margin-top: 0;
+    letter-spacing: 3px;
+}
+
+/* Collection Page Styling */
+
+.wrapper {
+    width: 100%;
+    height: auto;
+    min-height: 1200px;
+    background: url('../images/background.png') repeat;
+    text-align: center;
+    font-family: 'Fredericka the Great', cursive;
+}
+
+.header {
+    width: 100%;
+    height: 10%;
+    padding-top: 10px;
+    background: transparent;
+}
+
+.collection-stats {
+    width: 65%;
+    margin: 0 auto;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.collection-stats img {
+    width: 90%;
+    height: auto;
+    margin-bottom: 10px;
+    /* TODO make this image a real graph in a div */
+
+ }
+
+.color-nav {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-flow: row;
+    margin: 0;
+}
+
+.color-nav li img {
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.collection-container {
+    width: 65%;
+    margin: 10px auto;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.collection-content {
+    width: 45%;
+}
+
+.collection-content img {
+    cursor: pointer;
+}
+
+.collection-card-info ul {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    padding-right: 20px;
+    color: white;
+    list-style-type: none;
+}
+
+.collection-card-info ul li {
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.collection-card-info ul li:nth-child(2) {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

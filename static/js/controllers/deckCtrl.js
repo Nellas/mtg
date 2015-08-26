@@ -4,8 +4,11 @@
 
 var app = angular.module('mtg').controller('deckCtrl', function($scope, mainService, $firebaseArray) {
 
+    $scope.sampleHand = [];
+
     var deckRef = new Firebase('https://lukemtg.firebaseio.com/deck');
     $scope.deck = $firebaseArray(deckRef);
+    $scope.fullDeck = $firebaseArray(deckRef);
     $scope.totalDeckCards = 0;
     $scope.deck.$loaded()
         .then(function(data) {
