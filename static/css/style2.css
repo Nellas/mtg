@@ -58,13 +58,11 @@ h1 {
     letter-spacing: 3px;
 }
 
-/* Collection Page Styling */
-
 .wrapper {
     width: 100%;
     height: auto;
     min-height: 1200px;
-    background: url('../images/background.png') repeat;
+    background: url('../images/Texture0211.jpg') repeat;
     text-align: center;
     font-family: 'Fredericka the Great', cursive;
 }
@@ -75,6 +73,8 @@ h1 {
     padding-top: 10px;
     background: transparent;
 }
+
+/* Collection Page Styling */
 
 .collection-stats {
     width: 65%;
@@ -106,25 +106,26 @@ h1 {
     cursor: pointer;
 }
 
-.collection-container {
+.card-container {
     width: 65%;
     margin: 10px auto;
     background: transparent;
     display: flex;
+    flex-flow: row;
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: flex-start;
 }
 
-.collection-content {
-    width: 45%;
+.card-content {
+    width: 25%;
 }
 
-.collection-content img {
+.card-content img {
     cursor: pointer;
 }
 
-.collection-card-info ul {
+.card-info ul {
     display: flex;
     justify-content: center;
     flex-flow: column;
@@ -141,4 +142,64 @@ h1 {
 .collection-card-info ul li:nth-child(2) {
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+/*Search Page Styling*/
+
+.card-search {
+    width: 500px;
+    height: 50px;
+    margin-left: 10px;
+    padding-left: 10px;
+    border: 1px solid black;
+    background: rgba(53, 122, 132, 0.2);
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 25px;
+    color: #bb722f;
+}
+
+.card-control {
+}
+
+.control-menu {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.control-menu image{
+    width: 16px;
+    height: 16px;
+}
+
+/* Modal */
+.mfp-no-margins img.mfp-img {
+    padding: 0;
+}
+.mfp-no-margins .mfp-figure:after {
+    top: 0;
+    bottom: 0;
+}
+.mfp-no-margins .mfp-container {
+    padding: 0;
+}
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+    opacity: 0;
+    -webkit-backface-visibility: hidden;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.mfp-with-zoom.mfp-ready .mfp-container {
+    opacity: 1;
+}
+.mfp-with-zoom.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+
+.mfp-with-zoom.mfp-removing .mfp-container,
+.mfp-with-zoom.mfp-removing.mfp-bg {
+    opacity: 0;
 }

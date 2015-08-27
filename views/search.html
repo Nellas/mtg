@@ -1,26 +1,22 @@
-<div class="nav-bar">
-    <a class="nav-link" href="/#/">Home</a>
-    <a class="nav-link" href="/#/collection">Collection</a>
-    <a class="nav-link" href="/#/deck">Deck Test</a>
-</div>
-<div>
-    <div class="main-view">
-        <div class="page-title">
-            <h1>Find a Card</h1>
+<div class="wrapper">
+    <header class="header">
+        <nav class="nav-bar">
+            <a href="/#/">Home</a>
+            <a href="/#/deck">Deck Test</a>
+            <a href="/#/collection">Collection</a>
+        </nav>
+    </header>
+    <h1>Search All Cards</h1>
+    <input class="card-search" ng-model="card" type="text" placeholder="Card Name" ng-change="getCardData(card)" />
+    <section class="card-container">
+        <div class="card-content" ng-repeat="card in cards">
+            <ngl-toggle></ngl-toggle>
+            <div  class="card-contol">
+                <a class="control-menu add" ng-click="addCard(card)"> <image src="static/images/icons/add.png" title="Add Card" /> </a>
+                <a class="control-menu view" ng-click=""> <image src="static/images/icons/view.png" /> </a>
+            </div>
         </div>
-        <input class="card-search" ng-model="card" type="text" placeholder="Card Name" ng-change="getCardData(card)" />
-    </div>
+    </section>
 </div>
-<div class="search-result-list" ng-repeat="card in cards">
-    <div class="card-image-container">
-        <img class="card-image" ng-src=" {{ card.image }} " />
-    </div>
-    <div  class="card-info-container">
-        <h2 class="card-name"> Card Name: {{ card.name }} </h2>
-        <p class="card-info"> Type: {{ card.type }} </p>
-        <p class="card-info"> Color: {{ card.color }} </p>
-        <p class="card-info"> Text: {{ card.text }} </p>
-        <button class="add-card-btn" ng-click="addCard(card)">Add Card</button>
-        <select class="card-amount" ng-model="card.amount" ng-init="card.amount = options[0].value" ng-options="option.key as option.value for option in options"></select>
-    </div>
-</div>
+
+<!--<select class="card-amount" ng-model="card.amount" ng-init="card.amount = options[0].value" ng-options="option.key as option.value for option in options"></select>-->

@@ -22,10 +22,10 @@
             </ul>
         </div>
     </section>
-    <section class="collection-container">
-        <div class="collection-content" ng-repeat="card in collectionData | filter: searchTerm">
+    <section class="card-container">
+        <div class="card-content" ng-repeat="card in collectionData | filter: searchTerm">
             <ngl-toggle></ngl-toggle>
-            <div class="collection-card-info">
+            <div class="card-info">
                 <ul ng-show="hideInfo">
                     <li>
                         <button class="add-deck-btn" ng-click="addCard(card)">Add Card to Deck</button>
