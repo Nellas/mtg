@@ -1,6 +1,5 @@
 * {
     box-sizing: border-box;
-    /*border: 1px solid red;*/
 }
 
 html body {
@@ -170,6 +169,58 @@ h1 {
 .control-menu image{
     width: 16px;
     height: 16px;
+}
+
+/*Deck Styling*/
+
+.deck-view {
+    margin: 0 auto;
+    width: 60%;
+}
+
+.deck-list {
+    float: left;
+}
+
+.deck-list li {
+    margin: 3px;
+    font-family: 'Signika', sans-serif;
+    font-size: 14px;
+    list-style: none;
+}
+
+.deck-list li a {
+    text-decoration: none;
+
+}
+
+.deck-image {
+    float: left;
+    margin-left: 20px;
+}
+
+.deck-br {
+    clear: both;
+    margin: 0 auto;;
+    border-top: 1px solid black;
+    width: 70%;
+
+}
+
+.sample-hand {
+    clear: both;
+    margin-top: 20px;
+}
+
+.sample-hand-btn {
+    cursor: pointer;
+}
+
+.sample-hand ul li {
+    display: inline-block;
+    list-style-type: none;
+    overflow: scroll;
+
 }
 
 /* Modal */
