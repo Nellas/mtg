@@ -7,30 +7,16 @@ var app = angular.module('mtg').controller('searchCtrl', function($scope, mainSe
     var collectionRef = new Firebase('https://lukemtg.firebaseio.com/collection');
     $scope.collection = $firebaseArray(collectionRef);
 
-    $scope.options = [        {
-            key: '1', value: '1'
-        },
-        {
-            key: '2', value: '2'
-        },
-        {
-            key: '3', value: '3'
-        },
-        {
-            key: '4', value: '4'
-        },
-        {
-            key: '5+', value: '5+'
-        }];
 
     $scope.addCard = function(card) {
+        var amt = prompt('How Many?');
         $scope.collection.$add({
-            image: card.image,
             name: card.name,
-            type: card.type,
             color: card.color,
-            text: card.text
-        });
+            type: card.type,
+            image: card.image,
+            amount: amt
+        })
     };
 
    $scope.getCardData = function() {

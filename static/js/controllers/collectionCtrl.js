@@ -18,18 +18,33 @@ var app = angular.module('mtg').controller('collectionCtrl', function($scope, ma
     $scope.deck = $firebaseArray(deckRef);
 
     $scope.addCard = function(card) {
-        $scope.deck.$add({
-            image: card.image,
-            name: card.name,
-            type: card.type,
-            color: card.color,
-            text: card.text,
-            deckAmount: card.deckAmount
-        });
+        var amt = prompt('How many to add to deck?');
+        if (isNaN(amt)) {
+            alert('Error: Value was not a number.');
+        } else if (parseInt(amt) > 4) {
+            alert('Error: Cannot add more than 4 to deck');
+        } else {
+            $scope.deck.$add({
+                name: card.name,
+                color: card.color,
+                type: card.type,
+                image: card.image,
+                deckAmount: amt
+            });
+        }
     };
 
     $scope.removeCard = function(card) {
-        $scope.collection.$remove(card);
+        console.log(card);
+        var amt = prompt('How Many to remove?');
+        if (isNaN(amt)) {
+            alert('Error: value was not a number.');
+            return false;
+        } else if (parseInt(card.amount) > parseInt(amt)) {
+            card.amount = amt;
+        } else {
+            $scope.collection.$remove(card);
+        }
     };
 
     $scope.searchTerm = '';

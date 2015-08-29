@@ -1,12 +1,14 @@
 <div class="wrapper">
-    <header class="header">
+    <div class="header-background">
+        <div class="page-title">
+            <img class="logo" src="static/images/logo.png" />
+        </div>
         <nav class="nav-bar">
-            <a href="/#/">Home</a>
-            <a href="/#/deck">Deck Test</a>
+            <a href="/#/deck">Deck</a>
+            <a href="/#/home">Home</a>
             <a href="/#/search">Find a card</a>
         </nav>
-    </header>
-    <h1>My Collection</h1>
+    </div>
     <section class="collection-stats">
         <div class="chart-container">
             <linechart data="chartData" options="chartOptions"></linechart>
@@ -26,14 +28,11 @@
         <div class="card-content" ng-repeat="card in collectionData | filter: searchTerm">
             <ngl-toggle></ngl-toggle>
             <div class="card-info">
-                <ul ng-show="hideInfo">
-                    <li>
-                        <button class="add-deck-btn" ng-click="addCard(card)">Add Card to Deck</button>
-                        <select class="card-amount" ng-model="card.deckAmount" ng-init="card.deckAmount = options[0].value" ng-options="option.key as option.value for option in options"></select>
-                    </li>
-                    <li><span class="collection-card-info-other"></span> You have {{ card.amount }} of this card.</li>
-                    <li><button class="remove-btn" ng-click="removeCard(card)">Remove Card</button></li>
-                </ul>
+                <p>You have {{ card.amount }} of this card.</p>
+            </div>
+            <div  class="card-control">
+                <a class="control-menu add" ng-click="addCard(card)">ADD CARD TO DECK</a>
+                <a class="control-menu remove" ng-click="removeCard(card)"> <img src="static/images/icons/trash.png" title="Remove Card" /> </a>
             </div>
         </div>
     </section>

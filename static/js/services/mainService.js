@@ -42,7 +42,6 @@ var app = angular.module('mtg').service('mainService', function($http, $q) {
                     returnedData.push({
                         name: data.name,
                         color: data.colors ? data.colors[0] : 'colorless',
-                        cost: data.cost,
                         type: data.types[0],
                         image: data.editions[0].image_url
                     });
