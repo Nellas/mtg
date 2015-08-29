@@ -27,11 +27,7 @@ var app = angular.module('mtg').controller('deckCtrl', function($scope, mainServ
         return $scope.displayedImage = card.image;
     };
 
-    function getRandNum() {
-        return Math.floor((Math.random() * $scope.deckData.length));
-    }
-
-
+    // I create an array of all cards including duplicates, then shuffle that array and "draw" 7 cards.
     $scope.drawHand = function(deck) {
         $scope.sampleHand = [];
         var fullDeck = [];
@@ -44,9 +40,19 @@ var app = angular.module('mtg').controller('deckCtrl', function($scope, mainServ
                 }
             }
         }
-        console.log('full Deck', fullDeck);
-        for (var i = 0; i < 7; i++) {
-            $scope.sampleHand.push(fullDeck.splice(getRandNum(), 1)[0]);
+        // Shuffle the fullDeck array
+        var l = fullDeck.length, m, n;
+
+        // While there remain elements to shuffle pick a remaining element and swap it with the current element.
+        while(l) {
+            n = Math.floor(Math.random() * l--);
+            m = fullDeck[l];
+            fullDeck[l] = fullDeck[n];
+            fullDeck[n] = m;
+        }
+        // Draw top seven cards
+        for (var o = 0; o < 7; o++) {
+            $scope.sampleHand.push(fullDeck[o]);
         }
         return $scope.sampleHand;
     }

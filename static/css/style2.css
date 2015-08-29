@@ -217,6 +217,7 @@ h1 {
 }
 
 .sample-hand ul li {
+    margin: 5px 10px;
     display: inline-block;
     list-style-type: none;
     overflow: scroll;
