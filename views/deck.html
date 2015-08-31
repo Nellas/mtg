@@ -19,6 +19,27 @@
         <div class="deck-image">
             <img ng-model="displayedImage" src="{{ displayedImage }}" />
         </div>
+        <div class="add-land">
+            <h2>ADD BASIC LANDS</h2>
+            <div class="land-images">
+                <ul class="land-list">
+                    <li> <img src="static/images/white.png" /> </li>
+                    <li> <img src="static/images/blue.png" /> </li>
+                    <li> <img src="static/images/black.png" /> </li>
+                    <li> <img src="static/images/red.png" /> </li>
+                    <li> <img src="static/images/green.png" /> </li>
+                </ul>
+            </div>
+            <div class="land-amounts">
+                <ul class="land-amount-list">
+                    <li> <input class="land-amount" type="text" ng-model="plainsAmount" /> </li>
+                    <li> <input class="land-amount" type="text" ng-model="plainsAmount" /> </li>
+                    <li> <input class="land-amount" type="text" ng-model="plainsAmount" /> </li>
+                    <li> <input class="land-amount" type="text" ng-model="plainsAmount" /> </li>
+                    <li> <input class="land-amount" type="text" ng-model="plainsAmount" /> </li>
+                </ul>
+            </div>
+        </div>
     </div>
     <div class="deck-br"></div>
     <div class="sample-hand">

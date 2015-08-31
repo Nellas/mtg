@@ -216,8 +216,43 @@ video {
 
 .deck-image {
     float: left;
-    margin-left: 20px;
+    margin-left: 15%;
 }
+
+.add-land {
+    border: 1px solid red;
+    float: right;
+}
+
+.land-images {
+    border: 1px solid blue;
+    float: left;
+    list-style-type: none;
+}
+
+.land-list {
+    list-style-type: none;
+}
+
+.land-list li img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+
+.land-amounts {
+    border: 1px solid green;
+    float: right;
+}
+
+.land-amount-list li {
+    margin-top: 30px;
+    margin-right: 40px;
+    list-style-type: none;
+}
+
 
 .deck-br {
     clear: both;
