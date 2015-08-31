@@ -11,34 +11,27 @@
     </div>
     <div class="deck-view">
         <div class="deck-list">
-            <h2>Decklist &nbsp &nbsp {{ totalDeckCards }} cards</h2>
-            <ul>
-                <li ng-repeat="card in deckData"> <a href="{{ card.image }}" ng-mouseover="showCardImage(card)"> ({{ card.deckAmount }}) {{ card.name }} </a> </li>
-            </ul>
+            <h2>Decklist</h2>
+            <div class="deck-list categories">
+                <ul>
+                    <li> <h4>Creatures</h4> </li>
+                    <li ng-repeat="card in creatures"> <a href="{{ card.image }}" ng-mouseover="showCardImage(card)"> ({{ card.deckAmount }}) {{ card.name }} </a> </li>
+                    <li> <h4>Plaineswalker</h4> </li>
+                    <li ng-repeat="card in walkers"> <a href="{{ card.image }}" ng-mouseover="showCardImage(card)"> ({{ card.deckAmount }}) {{ card.name }} </a> </li>
+                </ul>
+                <ul>
+                    <li> <h4>Spells</h4> </li>
+                    <li ng-repeat="card in spells"> <a href="{{ card.image }}" ng-mouseover="showCardImage(card)"> ({{ card.deckAmount }}) {{ card.name }} </a> </li>
+                </ul>
+                <ul>
+                    <li> <h4>Land</h4> </li>
+                    <li ng-repeat="card in land"> <a href="{{ card.image }}" ng-mouseover="showCardImage(card)"> ({{ card.deckAmount }}) {{ card.name }} </a> </li>
+                    <li> <h3>{{ totalDeckCards }} Cards</h3> </li>
+                </ul>
+            </div>
         </div>
         <div class="deck-image">
             <img ng-model="displayedImage" src="{{ displayedImage }}" />
-        </div>
-        <div class="add-land">
-            <h2>ADD BASIC LANDS</h2>
-            <div class="land-images">
-                <ul class="land-list">
-                    <li> <img src="static/images/white.png" /> </li>
-                    <li> <img src="static/images/blue.png" /> </li>
-                    <li> <img src="static/images/black.png" /> </li>
-                    <li> <img src="static/images/red.png" /> </li>
-                    <li> <img src="static/images/green.png" /> </li>
-                </ul>
-            </div>
-            <div class="land-amounts">
-                <ul class="land-amount-list">
-                    <li> <input class="land-amount" type="text" ng-model="plainsAmount" /> </li>
-                    <li> <input class="land-amount" type="text" ng-model="plainsAmount" /> </li>
-                    <li> <input class="land-amount" type="text" ng-model="plainsAmount" /> </li>
-                    <li> <input class="land-amount" type="text" ng-model="plainsAmount" /> </li>
-                    <li> <input class="land-amount" type="text" ng-model="plainsAmount" /> </li>
-                </ul>
-            </div>
         </div>
     </div>
     <div class="deck-br"></div>
@@ -49,43 +42,3 @@
         </ul>
     </div>
 </div>
-
-
-
-
-
-
-
-
-<!--<div class="nav-bar">-->
-    <!--<a class="nav-link" href="/#/">Home</a>-->
-    <!--<a class="nav-link" href="/#/collection">Collection</a>-->
-    <!--<a class="nav-link" href="/#/search">Find a card</a>-->
-<!--</div>-->
-<!--<div>-->
-    <!--<div class="main-view">-->
-        <!--<h1>Deck Tester</h1>-->
-        <!--<h2>Number of cards in deck: {{ totalDeckCards }}</h2>-->
-    <!--</div>-->
-<!--</div>-->
-<!--<div class="collection-graph">-->
-    <!--<h3>Sample Hand</h3>-->
-    <!--<button class="sample-hand-btn" ng-click="drawHand(deckData)">Draw Sample Hand</button>-->
-    <!--<ul class="sample-hand">-->
-        <!--<li ng-repeat="sample in sampleHand" > <img src="{{ sample.image }} "</li>-->
-    <!--</ul>-->
-<!--</div>-->
-<!--<div class="collection-list">-->
-    <!--<div class="collection-content" ng-repeat="card in deckData">-->
-        <!--<ngl-toggle></ngl-toggle>-->
-        <!--<div class="collection-card-info">-->
-            <!--<ul ng-show="hideInfo">-->
-                <!--<li><span class="collection-card-info-other"></span> Currently {{ card.deckAmount }} in this deck </li>-->
-                <!--<li><span class="collection-card-info-type"></span> Type: {{ card.type }} </li>-->
-                <!--<li><span class="collection-card-info-color"></span> Color: {{ card.color }}</li>-->
-                <!--<li><span class="collection-card-info-text"></span> Text: {{ card.text}} </li>-->
-                <!--<li><button class="remove-btn" ng-click="removeCard(card)">Remove Card</button></li>-->
-            <!--</ul>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->

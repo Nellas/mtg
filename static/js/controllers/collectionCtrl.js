@@ -21,8 +21,6 @@ var app = angular.module('mtg').controller('collectionCtrl', function($scope, ma
         var amt = prompt('How many to add to deck?');
         if (isNaN(amt)) {
             alert('Error: Value was not a number.');
-        } else if (parseInt(amt) > 4) {
-            alert('Error: Cannot add more than 4 to deck');
         } else {
             $scope.deck.$add({
                 name: card.name,

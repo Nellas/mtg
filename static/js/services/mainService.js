@@ -35,7 +35,7 @@ var app = angular.module('mtg').service('mainService', function($http, $q) {
             $http({
                 method: 'GET',
                 url: 'https://api.deckbrew.com/mtg/cards/typeahead?q=' + card
-            }).then(function (data) {
+            }).then(function(data) {
                 console.log(data);
                 var returnedData = [];
                 data.data.forEach(function(data) {
@@ -51,5 +51,22 @@ var app = angular.module('mtg').service('mainService', function($http, $q) {
             });
         }
         return dfd.promise;
+    };
+
+    this.getLand = function(type) {
+        var dfd = $q.defer();
+        $http({
+            method: GET,
+            url: 'https://api.deckbrew.com/mtg/cards/' + type
+        }).then(function(data) {
+            console.log(data);
+            var returnedLand = {
+
+            }
+
+
+        })
+
+
     }
 });

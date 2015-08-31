@@ -6,7 +6,7 @@
         <nav class="nav-bar">
             <a href="/#/collection">Collection</a>
             <a href="/#/home">Home</a>
-            <a href="/#/search">Deck</a>
+            <a href="/#/deck">Deck</a>
         </nav>
     </div>
     <input class="card-search" ng-model="card" type="text" placeholder="SEARCH ALL CARDS" ng-change="getCardData(card)" />
@@ -14,7 +14,7 @@
         <div class="card-content" ng-repeat="card in cards">
             <ngl-toggle></ngl-toggle>
             <div  class="card-control">
-                <a class="control-menu add" ng-click="addCard(card)"> ADD CARD</a>
+                <a class="control-btn add" ng-click="addCard(card)"> ADD CARD</a>
             </div>
         </div>
     </section>

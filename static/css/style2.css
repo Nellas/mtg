@@ -34,6 +34,11 @@ video {
 
 .header-background.home {
     margin: 0;
+    width: 35%;
+    padding: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .nav-bar {
@@ -65,7 +70,8 @@ video {
 .wrapper {
     width: 100%;
     height: auto;
-    min-height: 1200px;
+    min-height: 1500px;
+    margin: 0;
     background: url('../images/Texture0211.jpg') repeat;
     text-align: center;
     font-family: 'Fredericka the Great', cursive;
@@ -98,16 +104,14 @@ video {
     width: 100%;
     margin-top: 2px;
     margin-bottom: 10px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    display: inline-block;
 
 }
 
-.control-menu.add {
-    margin-left: 10%;
+.control-btn {
+    margin: 0 auto;
     width: auto;
-    padding: 4px;
+    padding: 2px;
     border: 1px solid rgb(27, 229, 88);
     border-radius: 10px;
     display: inline-block;
@@ -119,10 +123,16 @@ video {
     cursor: pointer;
 }
 
-.control-menu.add:hover {
+.control-btn.add:hover {
     border-color: rgb(1, 90, 115);
     color: rgb(1, 90, 115);
     background-color: rgba(27, 229, 88, .3);
+}
+
+.control-btn.remove:hover {
+    border-color: #B60000;
+    background-color: rgba(27, 229, 88, .3);
+
 }
 
 /* Collection Page Styling */
@@ -201,6 +211,15 @@ video {
 .deck-list {
     float: left;
 }
+.deck-list h4 {
+    text-decoration: underline;
+    margin-bottom: 4px;
+}
+
+.deck-list.categories {
+    display: flex;
+    justify-content: flex-start;
+}
 
 .deck-list li {
     margin: 3px;
@@ -232,25 +251,18 @@ video {
 
 .land-list {
     list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .land-list li img{
     width: 50px;
     height: 50px;
+    margin: 10px;
     border-radius: 50px;
     cursor: pointer;
-}
-
-
-.land-amounts {
-    border: 1px solid green;
-    float: right;
-}
-
-.land-amount-list li {
-    margin-top: 30px;
-    margin-right: 40px;
-    list-style-type: none;
 }
 
 

@@ -4,15 +4,34 @@
 
 var app = angular.module('mtg').controller('deckCtrl', function($scope, mainService, $firebaseArray) {
 
+    $scope.creatures = [];
+    $scope.walkers = [];
+    $scope.spells = [];
+    $scope.land = [];
+
     var deckRef = new Firebase('https://lukemtg.firebaseio.com/deck');
     $scope.deck = $firebaseArray(deckRef);
     $scope.totalDeckCards = 0;
     $scope.deck.$loaded()
         .then(function(data) {
             $scope.deckData = data;
+            console.log(data);
             for (var i = 0; i < data.length; i++) {
-                $scope.totalDeckCards += parseInt(data[i].deckAmount);
+                if (data[i].type === 'creature') {
+                    $scope.creatures.push(data[i]);
+                } else if (data[i].type === 'land') {
+                    $scope.land.push(data[i]);
+                } else if (data[i].type === 'planeswalker'){
+                    $scope.walkers.push(data[i]);
+                } else {
+                    $scope.spells.push(data[i]);
+                }
+
             }
+            for (var j = 0; j < data.length; j++) {
+                $scope.totalDeckCards += parseInt(data[j].deckAmount);
+            }
+            $scope.displayedImage = data[0].image;
         })
         .catch(function(error) {
             console.error("Error:", error);
