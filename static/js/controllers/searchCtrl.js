@@ -10,19 +10,24 @@ var app = angular.module('mtg').controller('searchCtrl', function($scope, mainSe
 
     $scope.addCard = function(card) {
         var amt = prompt('How Many?');
-        $scope.collection.$add({
+        for (var i = 0; i < $scope.collection.length; i++) {
+            if ($scope.collection[i].name === card.name) {
+                $scope.collection[i].amount = parseInt($scope.collection[i].amount) + parseInt(amt);
+                return $scope.collection.$save(i);
+            }
+        }
+            $scope.collection.$add({
             name: card.name,
             color: card.color,
             type: card.type,
             image: card.image,
             amount: amt
-        })
-    };
+            })
+        }
 
    $scope.getCardData = function() {
         setTimeout(function() {
             mainService.getCardData($scope.card).then(function(data) {
-                console.log('from the controller', data);
                 $scope.cards = data;
             })
         }, 250)

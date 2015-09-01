@@ -39,10 +39,14 @@ var app = angular.module('mtg').controller('collectionCtrl', function($scope, ma
             alert('Error: value was not a number.');
             return false;
         } else if (parseInt(card.amount) > parseInt(amt)) {
-            card.amount = amt;
-        } else {
-            $scope.collection.$remove(card);
+            for (var i = 0; i < $scope.collection.length; i++) {
+                if ($scope.collection[i].name === card.name) {
+                    $scope.collection[i].amount = parseInt($scope.collection[i].amount) - amt;
+                    return $scope.collection.$save(i);
+                }
+            }
         }
+        $scope.collection.$remove(card);
     };
 
     $scope.searchTerm = '';
@@ -50,74 +54,28 @@ var app = angular.module('mtg').controller('collectionCtrl', function($scope, ma
         return $scope.searchTerm = color;
     };
 
-    $scope.options = [{
-            key: '1', value: '1'
-        },
-        {
-            key: '2', value: '2'
-        },
-        {
-            key: '3', value: '3'
-        },
-        {
-            key: '4', value: '4'
-        }];
-
-    $scope.chartData = [
-        {   x: 0,
-            val_0: 0
-        },
-        {
-            x: 1,
-            val_0: 44
-        },
-        {
-            x: 2,
-            val_0: 61
-        },
-        {
-            x: 3,
-            val_0: 49
-        },
-        {
-            x: 4,
-            val_0: 54
-        },
-        {
-            x: 5,
-            val_0: 49
-        },
-        {
-            x: 6,
-            val_0: 31
-        }
-
-    ];
-
-    $scope.chartOptions = {
-        stacks: [
-            {
-                axis: "y",
-                series: [
-                    0,
-                    "id_0"
-                ]
-            }
-        ],
-        lineMode: "cardinal",
-        series: [
-            {
-                id: "id_0",
-                y: "val_0",
-                label: "tom",
-                type: "column",
-                color: "tomato"
-            }
-        ],
-        tooltip: {mode: 'scrubber', formatter: function(x, y, series) {return 'Total';}},
-        drawLegend: false,
-        drawDots: false,
-        columnsHGap: 5
-    };
-
+    //var ctx = $("#myChart").get(0).getContext("2d");
+    //var myNewChart = new Chart(ctx).Bar(data, Chart.defaults.global.responsive = true);
+    //
+    //var data = {
+    //    labels: ['White', 'Blue', 'Black', 'Red', 'Green', 'Colorless' ],
+    //    datasets: [
+    //        {
+    //            label: "My First dataset",
+    //            fillColor: "rgba(220,220,220,0.5)",
+    //            strokeColor: "rgba(220,220,220,0.8)",
+    //            highlightFill: "rgba(220,220,220,0.75)",
+    //            highlightStroke: "rgba(220,220,220,1)",
+    //            data: [65, 59, 80, 81, 56, 55, 40]
+    //        },
+    //        {
+    //            label: "My Second dataset",
+    //            fillColor: "rgba(151,187,205,0.5)",
+    //            strokeColor: "rgba(151,187,205,0.8)",
+    //            highlightFill: "rgba(151,187,205,0.75)",
+    //            highlightStroke: "rgba(151,187,205,1)",
+    //            data: [28, 48, 40, 19, 86, 27, 90]
+    //        }
+    //    ]
+    //};
 });
