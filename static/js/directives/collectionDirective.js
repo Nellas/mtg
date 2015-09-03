@@ -18,8 +18,6 @@ var app = angular.module('mtg').directive('nglToggle', function() {
 
                     });
 
-                    console.log('');
-
                     $('.image-popup-fit-width').magnificPopup({
                         type: 'image',
                         closeOnContentClick: true,
