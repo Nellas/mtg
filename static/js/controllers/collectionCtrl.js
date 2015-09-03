@@ -4,10 +4,34 @@
 
 var app = angular.module('mtg').controller('collectionCtrl', function($scope, mainService, $firebaseArray){
 
+    $scope.colorArray = [0, 0, 0, 0, 0, 0];
+    $scope.colorMapping = {
+        white: 0,
+        blue: 1,
+        black: 2,
+        red: 3,
+        green: 4,
+        colorless: 5
+    };
+
     var collectionRef = new Firebase("https://lukemtg.firebaseio.com/collection");
     $scope.collection = $firebaseArray(collectionRef);
     $scope.collection.$loaded()
         .then(function(data) {
+            //$scope.colorArray[$scope.colorMapping[data.color]]++;
+            console.log(data);
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].color === 'white') {
+                    $scope.colorArray[0]++;
+                } else if (data[i].color === 'blue') {
+                    $scope.colorArray[1]++;
+                } else if (data[i].color === 'blue') {
+                    $scope.colorArray[1]++;
+                }
+            }
+            setTimeout(function() {
+                console.log($scope.colorArray);
+            }, 5000);
             $scope.collectionData = data;
         })
         .catch(function(error) {
@@ -56,32 +80,32 @@ var app = angular.module('mtg').controller('collectionCtrl', function($scope, ma
     $scope.chartData = [
         {
             type: "White",
-            value: 79,
+            value: $scope.colorArray[1],
             color: "#D6CFA1"
         },
         {
             type: "Blue",
-            value: 83,
+            value: 17,
             color: "#3A4152"
         },
         {
             type: "Black",
-            value: 81,
+            value: 19,
             color: "#33272B"
         },
         {
             type: "Red",
-            value: 77,
+            value: 16,
             color: "#C4674C"
         },
         {
             type: "Green",
-            value: 75,
+            value: 18,
             color: "#4F6D38"
         },
         {
             type: "Colorless",
-            value: 61,
+            value: 12,
             color: "#9C9E9A"
         }
     ];

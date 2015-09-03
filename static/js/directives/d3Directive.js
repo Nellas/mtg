@@ -23,7 +23,15 @@ angular.module("mtg").directive('nglChart', function() {
                 .style("width", function(d) { return d.value + "%"; })
                 .style("background-color", function(d) { return d.color; })
                 .text(function(d) { return d.type + " " + d.value + "%"; });
-            $scope.$apply();
+
+            scope.$watch(element[0], function(oldValue, newValue) {
+                if (newValue) {
+                    chart.selectAll('div')
+                        .data(scope.data).enter().append('div');
+                }
+            })
         }
+
+
     };
 });
