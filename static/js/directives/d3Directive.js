@@ -14,22 +14,29 @@ angular.module("mtg").directive('nglChart', function() {
 
         link: function (scope, element, attrs) {
 
-            setTimeout(function() {
-                var chart = d3.select(element[0]);
+            var chart = d3.select(element[0]);
 
+            scope.render = function(data) {
+                chart.selectAll('div').remove();
                 chart.append("div").attr("class", "chart")
                     .selectAll('div')
-                    .data(scope.data).enter().append("div")
+                    .data(data).enter().append("div")
                     .transition().ease("elastic")
-                    .style("width", function(d) { return d.value * 3 + "%"; })
-                    .style("background-color", function(d) { return d.color; })
-                    .text(function(d) { return d.type + " " + d.value + "%"; });
+                    .style("width", function (d) {
+                        return d.value * 3 + "%";
+                    })
+                    .style("background-color", function (d) {
+                        return d.color;
+                    })
+                    .text(function (d) {
+                        return d.type + " " + d.value + "%";
+                    });
+            };
 
-                scope.$watch(scope.data, function(newVals, oldVals) {
-                    return chart.data(newVals).enter().append("div")
-                }, true);
-
-            }, 400);
+            scope.$watch('data', function() {
+                scope.render(scope.data);
+                console.log('render data', scope.data)
+            }, true);
         }
     };
 });
