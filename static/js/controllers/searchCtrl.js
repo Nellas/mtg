@@ -1,12 +1,10 @@
 /**
  * Created by luke on 8/15/15.
  */
-
 var app = angular.module('mtg').controller('searchCtrl', function($scope, mainService, $firebaseObject, $firebaseArray) {
 
     var collectionRef = new Firebase('https://lukemtg.firebaseio.com/collection');
     $scope.collection = $firebaseArray(collectionRef);
-
 
     $scope.addCard = function(card) {
         var amt = prompt('How Many?');
@@ -23,7 +21,7 @@ var app = angular.module('mtg').controller('searchCtrl', function($scope, mainSe
             image: card.image,
             amount: amt
             })
-        }
+        };
 
    $scope.getCardData = function() {
         setTimeout(function() {

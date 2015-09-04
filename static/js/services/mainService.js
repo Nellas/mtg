@@ -1,7 +1,6 @@
 /**
  * Created by luke on 8/13/15.
  */
-
 var app = angular.module('mtg').service('mainService', function($http, $q) {
 
     function editResolve(data, dfd) {
@@ -52,21 +51,4 @@ var app = angular.module('mtg').service('mainService', function($http, $q) {
         }
         return dfd.promise;
     };
-
-    this.getLand = function(type) {
-        var dfd = $q.defer();
-        $http({
-            method: GET,
-            url: 'https://api.deckbrew.com/mtg/cards/' + type
-        }).then(function(data) {
-            console.log(data);
-            var returnedLand = {
-
-            }
-
-
-        })
-
-
-    }
 });
