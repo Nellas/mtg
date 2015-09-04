@@ -24,10 +24,8 @@ var app = angular.module('mtg').controller('searchCtrl', function($scope, mainSe
         };
 
    $scope.getCardData = function() {
-        setTimeout(function() {
             mainService.getCardData($scope.card).then(function(data) {
                 $scope.cards = data;
             })
-        }, 250)
-    };
+   };
 });

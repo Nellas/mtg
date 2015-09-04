@@ -10,6 +10,7 @@ var app = angular.module('mtg').controller('collectionCtrl', function($scope, ma
     $scope.refreshData = function() {
         $scope.collection.$loaded()
             .then(function (data) {
+                console.log('Promise return', data);
                 $scope.collectionData = data;
                 $scope.totalCards = 0;
                 $scope.colorArray = [0, 0, 0, 0, 0, 0];
@@ -35,6 +36,7 @@ var app = angular.module('mtg').controller('collectionCtrl', function($scope, ma
                             $scope.colorArray[5] = $scope.colorArray[5] + parseInt(data.amount);
                             break;
                     }
+                    console.log($scope.colorArray);
                 });
 
                 function getColorAmount(index) {

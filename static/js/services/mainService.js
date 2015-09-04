@@ -24,11 +24,21 @@ var app = angular.module('mtg').service('mainService', function($http, $q) {
             }
             switch (data.image) {
                 case 'https://image.deckbrew.com/mtg/multiverseid/0.jpg':
-                    console.log('BROKE!')
             }
 
         });
         dfd.resolve(data);
+    }
+
+    function setColors(data) {
+        console.log('DATA IN FUNCTION', data);
+        if (!data.colors) {
+            return "colorless";
+        } else if (data.colors.length <= 1) {
+            return data.colors[0];
+        } else if (data.colors.length > 1) {
+            return data.colors.join(', ');
+        }
     }
 
     this.getCardData = function(card) {
@@ -40,19 +50,21 @@ var app = angular.module('mtg').service('mainService', function($http, $q) {
                 method: 'GET',
                 url: 'https://api.deckbrew.com/mtg/cards/typeahead?q=' + card
             }).then(function(data) {
-                console.log(data);
+                console.log('full object', data);
                 var returnedData = [];
                 data.data.forEach(function(data) {
                     returnedData.push({
                         name: data.name,
-                        color: data.colors ? data.colors[0] + ' ' + data.colors[1] + ' ' + data.colors[2] : 'colorless',
+                        color: setColors(data),
+                        //color: data.colors ? data.colors[0]: 'colorless',
                         type: data.types[0],
-                        image: data.editions[0].image_url !== 'https://image.deckbrew.com/mtg/multiverseid/0.jpg' ? data.editions[0].image_url : data.editions[1].image_url
+                        image: data.editions[0].image_url !== 'https://image.deckbrew.com/mtg/multiverseid/0.jpg' ? data.editions[0].image_url : data.editions[data.editions.length - 1].image_url
                     });
 
                 });
+                console.log('before edit', returnedData);
                 editResolve(returnedData, dfd);
-                console.log(returnedData);
+                console.log('after edit', returnedData);
             });
         }
         return dfd.promise;
