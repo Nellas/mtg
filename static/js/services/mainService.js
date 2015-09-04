@@ -22,6 +22,11 @@ var app = angular.module('mtg').service('mainService', function($http, $q) {
                     data.image= 'https://image.deckbrew.com/mtg/multiverseid/276468.jpg';
                     break;
             }
+            switch (data.image) {
+                case 'https://image.deckbrew.com/mtg/multiverseid/0.jpg':
+                    console.log('BROKE!')
+            }
+
         });
         dfd.resolve(data);
     }
@@ -40,13 +45,14 @@ var app = angular.module('mtg').service('mainService', function($http, $q) {
                 data.data.forEach(function(data) {
                     returnedData.push({
                         name: data.name,
-                        color: data.colors ? data.colors[0] : 'colorless',
+                        color: data.colors ? data.colors[0] + ' ' + data.colors[1] + ' ' + data.colors[2] : 'colorless',
                         type: data.types[0],
-                        image: data.editions[0].image_url
+                        image: data.editions[0].image_url !== 'https://image.deckbrew.com/mtg/multiverseid/0.jpg' ? data.editions[0].image_url : data.editions[1].image_url
                     });
 
                 });
                 editResolve(returnedData, dfd);
+                console.log(returnedData);
             });
         }
         return dfd.promise;

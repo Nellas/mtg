@@ -11,7 +11,6 @@ var app = angular.module('mtg').controller('collectionCtrl', function($scope, ma
     $scope.collection.$loaded()
         .then(function(data) {
             $scope.collectionData = data;
-            //$scope.colorArray[$scope.colorMapping[data.color]]++;
             $scope.totalCards = data.length - 1;
             console.log(data);
             for (var i = 0; i < data.length; i++) {

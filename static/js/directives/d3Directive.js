@@ -21,7 +21,7 @@ angular.module("mtg").directive('nglChart', function() {
                     .selectAll('div')
                     .data(scope.data).enter().append("div")
                     .transition().ease("elastic")
-                    .style("width", function(d) { return d.value + "%"; })
+                    .style("width", function(d) { return d.value * 3 + "%"; })
                     .style("background-color", function(d) { return d.color; })
                     .text(function(d) { return d.type + " " + d.value + "%"; });
 
