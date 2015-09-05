@@ -7,18 +7,23 @@ var app = angular.module('mtg').service('mainService', function($http, $q) {
         data.forEach(function(data) {
             switch(data.name) {
                 case 'Plains':
+                    data.color = 'white';
                     data.image = 'https://image.deckbrew.com/mtg/multiverseid/143620.jpg';
                     break;
                 case 'Island':
+                    data.color = 'blue';
                     data.image = 'https://image.deckbrew.com/mtg/multiverseid/143619.jpg';
                     break;
                 case 'Mountain':
+                    data.color = 'red';
                     data.image = 'https://image.deckbrew.com/mtg/multiverseid/25966.jpg';
                     break;
                 case 'Swamp':
+                    data.color = 'black';
                     data.image = 'https://image.deckbrew.com/mtg/multiverseid/276448.jpg';
                     break;
                 case 'Forest':
+                    data.color = 'green';
                     data.image= 'https://image.deckbrew.com/mtg/multiverseid/276468.jpg';
                     break;
             }

@@ -15,7 +15,6 @@ var app = angular.module('mtg').controller('collectionCtrl', function($scope, ma
                 $scope.totalCards = 0;
                 $scope.colorArray = [0, 0, 0, 0, 0, 0];
                 data.forEach(function (data) {
-                    $scope.totalCards = $scope.totalCards + parseInt(data.amount);
                     switch (data.color) {
                         case 'white':
                             $scope.colorArray[0] = $scope.colorArray[0] + parseInt(data.amount);
@@ -36,8 +35,9 @@ var app = angular.module('mtg').controller('collectionCtrl', function($scope, ma
                             $scope.colorArray[5] = $scope.colorArray[5] + parseInt(data.amount);
                             break;
                     }
-                    console.log($scope.colorArray);
+                    $scope.totalCards = $scope.totalCards + parseInt(data.amount);
                 });
+                    console.log($scope.colorArray);
 
                 function getColorAmount(index) {
                     return Math.ceil(($scope.colorArray[index] / $scope.totalCards) * 100);
