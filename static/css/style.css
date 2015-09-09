@@ -2,7 +2,7 @@
 * :after,
 * :before {
     box-sizing: border-box;
-    /*border: 1px solid red;*/
+    border: 1px solid red;
 }
 
 html body {
@@ -243,7 +243,14 @@ text-decoration: none;
 
 .deck-image {
 float: left;
-margin-left: 15%;
+margin-left: 8%;
+}
+
+.pie-container {
+    float: left;
+    margin-left: 5%;
+    transition: all 1s ease-out;
+
 }
 
 .deck-br {

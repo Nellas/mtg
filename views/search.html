@@ -12,7 +12,9 @@
     <input class="card-search" ng-model="card" type="text" placeholder="SEARCH ALL CARDS" ng-change="getCardData(card)" />
     <section class="card-container">
         <div class="card-content" ng-repeat="card in cards">
-            <ngl-toggle></ngl-toggle>
+            <div class="chart-container">
+                <ngl-toggle></ngl-toggle>
+            </div>
             <div  class="card-control">
                 <a class="control-btn add" ng-click="addCard(card)"> ADD CARD</a>
             </div>

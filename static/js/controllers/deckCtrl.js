@@ -7,6 +7,7 @@ var app = angular.module('mtg').controller('deckCtrl', function($scope, mainServ
     $scope.walkers = [];
     $scope.spells = [];
     $scope.land = [];
+    $scope.chartData = [30, 40, 60];
 
     var deckRef = new Firebase('https://lukemtg.firebaseio.com/deck');
     $scope.deck = $firebaseArray(deckRef);
@@ -27,6 +28,8 @@ var app = angular.module('mtg').controller('deckCtrl', function($scope, mainServ
                 }
 
             }
+            $scope.chartData = [$scope.creatures.length - 1, $scope.spells.length - 1, $scope.land.length - 1];
+            console.log('chart data',$scope.chartData);
             for (var j = 0; j < data.length; j++) {
                 $scope.totalDeckCards += parseInt(data[j].deckAmount);
             }
@@ -61,7 +64,7 @@ var app = angular.module('mtg').controller('deckCtrl', function($scope, mainServ
         // Shuffle the fullDeck array
         var l = fullDeck.length, m, n;
 
-        // While there remain elements to shuffle pick a remaining element and swap it with the current element.
+        // While un-shuffled elements remain pick a remaining element and swap it with the current element.
         while(l) {
             n = Math.floor(Math.random() * l--);
             m = fullDeck[l];

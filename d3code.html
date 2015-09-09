@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 
 <script>
-    var data = [10, 50, 80];
+    var chartData = [10, 50, 80];
     var r = 300;
 
     var color = d3.scale.ordinal()
             .range(["red", "blue", "orange"]);
 
-    var canvas = d3.select(element[0]).append("svg")
+    var chart = d3.select(element[0]).append("svg")
             .attr("width", 1500)
             .attr("height", 1500);
 
-    var group = canvas.append("g")
+    var group = chart.append("g")
             .attr("transform", "translate(300, 300)");
 
     var arc = d3.svg.arc()
@@ -24,7 +24,7 @@
             });
 
     var arcs = group.selectAll(".arc")
-            .data(pie(data))
+            .data(pie(chartData))
             .enter()
             .append("g")
             .attr("class", "arc");

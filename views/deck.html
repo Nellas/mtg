@@ -33,7 +33,9 @@
         <div class="deck-image">
             <img ng-model="displayedImage" src="{{ displayedImage }}" />
         </div>
-    </div>
+        <div class="pie-container">
+            <ngl-pie chart-data="chartData"></ngl-pie>
+        </div>
     <div class="deck-br"></div>
     <div class="sample-hand">
         <button class="sample-hand-btn" ng-click="drawHand(deckData)">Draw Sample Hand</button>
