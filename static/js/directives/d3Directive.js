@@ -23,6 +23,7 @@ angular.module("mtg").directive('nglChart', function() {
                     .data(data).enter().append("div")
                     .transition().ease("elastic")
                     .style("width", function (d) {
+                        console.log('this is d', d);
                         return d.value * 3 + "%";
                     })
                     .style("background-color", function (d) {

@@ -8,10 +8,16 @@ var app = angular.module('mtg').controller('searchCtrl', function($scope, mainSe
 
     $scope.addCard = function(card) {
         var amt = prompt('How Many?');
-        for (var i = 0; i < $scope.collection.length; i++) {
+        if (isNaN(amt)) {
+            alert('Error: Value was not a number');
+            return false;
+        } else {
+        for (var i = 0; i < $scope.collection.length; i++)
+        {
             if ($scope.collection[i].name === card.name) {
                 $scope.collection[i].amount = parseInt($scope.collection[i].amount) + parseInt(amt);
                 return $scope.collection.$save(i);
+                }
             }
         }
             $scope.collection.$add({
