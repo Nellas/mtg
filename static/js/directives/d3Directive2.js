@@ -40,7 +40,6 @@ angular.module("mtg").directive('nglPie', function() {
                 .append("g")
                 .attr("class", "arc");
 
-
             arcs.append("path")
                 .attr("d", arc)
                 .attr("fill", function(data) {

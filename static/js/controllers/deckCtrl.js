@@ -25,8 +25,8 @@ var app = angular.module('mtg').controller('deckCtrl', function($scope, mainServ
                 } else {
                     $scope.spells.push(data[i]);
                 }
-
             }
+
             $scope.chartData = [$scope.creatures.length - 1, $scope.spells.length - 1, $scope.land.length - 1];
             for (var j = 0; j < data.length; j++) {
                 $scope.totalDeckCards += parseInt(data[j].deckAmount);
@@ -75,5 +75,4 @@ var app = angular.module('mtg').controller('deckCtrl', function($scope, mainServ
         }
         return $scope.sampleHand;
     }
-
 });
