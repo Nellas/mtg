@@ -27,16 +27,11 @@ var app = angular.module('mtg').service('mainService', function($http, $q) {
                     data.image= 'https://image.deckbrew.com/mtg/multiverseid/276468.jpg';
                     break;
             }
-            switch (data.image) {
-                case 'https://image.deckbrew.com/mtg/multiverseid/0.jpg':
-            }
-
         });
         dfd.resolve(data);
     }
 
     function setColors(data) {
-        console.log('DATA IN FUNCTION', data);
         if (!data.colors) {
             return "colorless";
         } else if (data.colors.length <= 1) {
@@ -55,21 +50,18 @@ var app = angular.module('mtg').service('mainService', function($http, $q) {
                 method: 'GET',
                 url: 'https://api.deckbrew.com/mtg/cards/typeahead?q=' + card
             }).then(function(data) {
-                console.log('full object', data);
+                //console.log('full object', data);
                 var returnedData = [];
                 data.data.forEach(function(data) {
                     returnedData.push({
                         name: data.name,
                         color: setColors(data),
-                        //color: data.colors ? data.colors[0]: 'colorless',
                         type: data.types[0],
                         image: data.editions[0].image_url !== 'https://image.deckbrew.com/mtg/multiverseid/0.jpg' ? data.editions[0].image_url : data.editions[data.editions.length - 1].image_url
                     });
 
                 });
-                console.log('before edit', returnedData);
                 editResolve(returnedData, dfd);
-                console.log('after edit', returnedData);
             });
         }
         return dfd.promise;

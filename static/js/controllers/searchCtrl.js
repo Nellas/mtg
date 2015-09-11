@@ -3,10 +3,16 @@
  */
 var app = angular.module('mtg').controller('searchCtrl', function($scope, mainService, $firebaseObject, $firebaseArray) {
 
+    $scope.getCardData = function() {
+        mainService.getCardData($scope.card).then(function(data) {
+            $scope.cards = data;
+        })
+    };
+
     var collectionRef = new Firebase('https://lukemtg.firebaseio.com/collection');
     $scope.collection = $firebaseArray(collectionRef);
 
-    $scope.addCard = function(card) {
+    $scope.addCardCollection = function(card) {
         var amt = prompt('How Many?');
         if (isNaN(amt)) {
             alert('Error: Value was not a number');
@@ -29,9 +35,21 @@ var app = angular.module('mtg').controller('searchCtrl', function($scope, mainSe
             })
         };
 
-   $scope.getCardData = function() {
-            mainService.getCardData($scope.card).then(function(data) {
-                $scope.cards = data;
-            })
-   };
+    var deckRef = new Firebase("https://lukemtg.firebaseio.com/deck");
+    $scope.deck = $firebaseArray(deckRef);
+
+    $scope.addCardDeck = function(card) {
+        var amt = prompt('How many to add to deck?');
+        if (isNaN(amt)) {
+            alert('Error: Value was not a number.');
+        } else {
+            $scope.deck.$add({
+                name: card.name,
+                color: card.color,
+                type: card.type,
+                image: card.image,
+                deckAmount: amt
+            });
+        }
+    };
 });

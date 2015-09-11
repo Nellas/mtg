@@ -2,7 +2,6 @@
 * :after,
 * :before {
     box-sizing: border-box;
-    /*border: 1px solid red;*/
 }
 
 html body {
@@ -110,11 +109,11 @@ video {
 }
 
 .control-btn {
-    margin: 0 auto;
+    margin-left: 5px;
     width: auto;
     padding: 2px;
     border: 1px solid rgb(27, 229, 88);
-    border-radius: 10px;
+    border-radius: 5px;
     display: inline-block;
     color: rgb(1, 90, 115);
     background-color: rgba(1, 90, 115, .5);
@@ -208,42 +207,49 @@ video {
 /*Deck Styling*/
 
 .deck-view {
-margin: 10px auto;
-width: 60%;
+    margin: 10px auto;
+    width: 60%;
 }
 
 .deck-list {
-float: left;
+    float: left;
 }
+
 .deck-list h4 {
-text-decoration: underline;
-margin-bottom: 4px;
+    text-decoration: underline;
+    margin-bottom: 4px;
 }
 
 .deck-list.categories {
-display: flex;
-justify-content: flex-start;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .deck-list li {
-margin: 3px;
-font-family: 'Signika', sans-serif;
-font-size: 14px;
-list-style: none;
+    margin: 3px;
+    font-family: 'Signika', sans-serif;
+    font-size: 14px;
+    list-style: none;
 }
 
 .deck-list li a {
     color: #015A73;
-text-decoration: none;
+    text-decoration: none;
 }
 
 .deck-list li a:visited {
     color: #015A73;
 }
 
+.deck-list img {
+    height: 15px;
+    width: 15px;
+    border-radius: 60px;
+}
+
 .deck-image {
-float: left;
-margin-left: 8%;
+    float: left;
+    margin-left: 8%;
 }
 
 .pie-container {
@@ -254,28 +260,29 @@ margin-left: 8%;
 }
 
 .deck-br {
-clear: both;
-margin: 0 auto;;
-border-top: 1px solid black;
-width: 70%;
+    clear: both;
+    margin: 0 auto;;
+    border-top: 1px solid black;
+    width: 70%;
 
 }
 
 .sample-hand {
-clear: both;
-margin-top: 20px;
+    margin-top: 20px;
+    white-space: nowrap;
+    overflow: scroll;
+    overflow-y: hidden;
 }
 
 .sample-hand-btn {
-cursor: pointer;
+    margin-top: 20px;
+    cursor: pointer;
 }
 
 .sample-hand ul li {
-margin: 5px 10px;
-display: inline-block;
-list-style-type: none;
-overflow: scroll;
-
+    margin: 5px 10px;
+    display: inline-block;
+    list-style-type: none;
 }
 
 /*Search Page Styling*/
@@ -306,9 +313,9 @@ overflow: scroll;
 /* Modal */
 
 .mfp-no-margins img.mfp-img {
-height: 500px;
-width: 375px;
-padding: 0;
+    height: 500px;
+    width: 375px;
+    padding: 0;
 }
 .mfp-no-margins .mfp-figure:after {
     top: 0;
