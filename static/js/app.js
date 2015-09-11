@@ -4,10 +4,6 @@
 
 var app = angular.module('mtg', ['ngRoute', 'firebase', 'ngAnimate']);
 
-app.constant('fb', {
-    url: '#'
-});
-
 app.config(function($routeProvider) {
     $routeProvider
         .when('/', {

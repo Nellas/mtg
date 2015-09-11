@@ -15,17 +15,17 @@
             <div class="deck-list categories">
                 <ul>
                     <li> <h4>Creatures</h4> </li>
-                    <li ng-repeat="card in creatures"> <a href="" ng-mouseover="showCardImage(card)"> ({{ card.deckAmount }}) {{ card.name }} </a> </li>
+                    <li ng-repeat="card in creatures"> <a href="" ng-mouseover="showCardImage(card)" ng-click="removeCard(card)"> ({{ card.deckAmount }}) {{ card.name }} </a> <img src="static/images/warning.png" ng-show="warning" title="You have more than 4 of this card in the deck.  This may make your deck illegal in most formats." /> </li>
                     <li> <h4>Plaineswalker</h4> </li>
-                    <li ng-repeat="card in walkers"> <a href="" ng-mouseover="showCardImage(card)"> ({{ card.deckAmount }}) {{ card.name }} </a> </li>
+                    <li ng-repeat="card in walkers"> <a href="" ng-mouseover="showCardImage(card)" ng-click="removeCard(card)"> ({{ card.deckAmount }}) {{ card.name }} </a> <img src="static/images/warning.png" ng-show="warning" title="You have more than 4 of this card in the deck.  This may make your deck illegal in most formats." /> </li>
                 </ul>
                 <ul>
                     <li> <h4>Spells</h4> </li>
-                    <li ng-repeat="card in spells"> <a href="" ng-mouseover="showCardImage(card)"> ({{ card.deckAmount }}) {{ card.name }} </a> </li>
+                    <li ng-repeat="card in spells"> <a href="" ng-mouseover="showCardImage(card)" ng-click="removeCard(card)"> ({{ card.deckAmount }}) {{ card.name }} </a> <img src="static/images/warning.png" ng-show="warning" title="You have more than 4 of this card in the deck.  This may make your deck illegal in most formats." /> </li>
                 </ul>
                 <ul>
                     <li> <h4>Land</h4> </li>
-                    <li ng-repeat="card in land"> <a href="" ng-mouseover="showCardImage(card)"> ({{ card.deckAmount }}) {{ card.name }} </a> </li>
+                    <li ng-repeat="card in land"> <a href="" ng-mouseover="showCardImage(card)" ng-click="removeCard(card)"> ({{ card.deckAmount }}) {{ card.name }} </a> <img src="static/images/warning.png" ng-show="warning" title="You have more than 4 of this card in the deck.  This may make your deck illegal in most formats." /> </li>
                     <li> <h3>{{ totalDeckCards }} Cards</h3> </li>
                 </ul>
             </div>
@@ -33,12 +33,13 @@
         <div class="deck-image">
             <img ng-model="displayedImage" src="{{ displayedImage }}" />
         </div>
-        <div class="pie-container">
-            <ngl-pie chart-data="chartData"></ngl-pie>
-        </div>
+        <!--TODO:-->
+        <!--<div class="pie-container">-->
+            <!--<ngl-pie chart-data="chartData"></ngl-pie>-->
+        <!--</div>-->
     <div class="deck-br"></div>
-    <div class="sample-hand">
         <button class="sample-hand-btn" ng-click="drawHand(deckData)">Draw Sample Hand</button>
+    <div class="sample-hand">
         <ul>
             <li ng-repeat="sample in sampleHand track by $index" > <img src="{{ sample }} "></li>
         </ul>

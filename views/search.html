@@ -16,7 +16,11 @@
                 <ngl-toggle></ngl-toggle>
             </div>
             <div  class="card-control">
-                <a class="control-btn add" ng-click="addCard(card)"> ADD CARD</a>
+                <form ng-submit="addCard(card)">
+                    ADD CARD TO:
+                    <a class="control-btn add" ng-click="addCardCollection(card)">Collection</a>
+                    <a class="control-btn add" ng-click="addCardDeck(card)">Deck</a>
+                </form>
             </div>
         </div>
     </section>

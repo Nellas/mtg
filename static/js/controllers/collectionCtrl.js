@@ -4,13 +4,13 @@
 var app = angular.module('mtg').controller('collectionCtrl', function($scope, mainService, $firebaseArray){
 
     $scope.chartData = [];
+    $scope.searchTerm = '';
 
     var collectionRef = new Firebase("https://lukemtg.firebaseio.com/collection");
     $scope.collection = $firebaseArray(collectionRef);
     $scope.refreshData = function() {
         $scope.collection.$loaded()
             .then(function (data) {
-                console.log('Promise return', data);
                 $scope.collectionData = data;
                 $scope.totalCards = 0;
                 $scope.colorArray = [0, 0, 0, 0, 0, 0];
@@ -37,7 +37,6 @@ var app = angular.module('mtg').controller('collectionCtrl', function($scope, ma
                     }
                     $scope.totalCards = $scope.totalCards + parseInt(data.amount);
                 });
-                    console.log($scope.colorArray);
 
                 function getColorAmount(index) {
                     return Math.ceil(($scope.colorArray[index] / $scope.totalCards) * 100);
@@ -122,7 +121,7 @@ var app = angular.module('mtg').controller('collectionCtrl', function($scope, ma
         $scope.collection.$remove(card);
         $scope.refreshData();
     };
-    $scope.searchTerm = '';
+
     $scope.setSearchTerm = function(color) {
         return $scope.searchTerm = color;
     };

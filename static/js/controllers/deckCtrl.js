@@ -15,7 +15,6 @@ var app = angular.module('mtg').controller('deckCtrl', function($scope, mainServ
     $scope.deck.$loaded()
         .then(function(data) {
             $scope.deckData = data;
-            console.log(data);
             for (var i = 0; i < data.length; i++) {
                 if (data[i].type === 'creature') {
                     $scope.creatures.push(data[i]);
@@ -29,7 +28,6 @@ var app = angular.module('mtg').controller('deckCtrl', function($scope, mainServ
 
             }
             $scope.chartData = [$scope.creatures.length - 1, $scope.spells.length - 1, $scope.land.length - 1];
-            console.log('chart data',$scope.chartData);
             for (var j = 0; j < data.length; j++) {
                 $scope.totalDeckCards += parseInt(data[j].deckAmount);
             }

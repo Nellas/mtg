@@ -57,6 +57,12 @@ angular.module("mtg").directive('nglPie', function() {
                 .text(function(d) {
                     return d.data;
                 });
+
+            legend = svg.append("g")
+                .attr("class","legend")
+                .attr("transform","translate(50,30)")
+                .style("font-size","12px")
+                .call(d3.legend)
         }
     };
 });

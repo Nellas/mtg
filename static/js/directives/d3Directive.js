@@ -35,7 +35,7 @@ angular.module("mtg").directive('nglChart', function() {
 
             scope.$watch('data', function() {
                 scope.render(scope.data);
-                console.log('render data', scope.data)
+                //console.log('render data', scope.data)
             }, true);
         }
     };
