@@ -1,9 +1,0 @@
-* sample hand logic -- stop current logic from changing the deck view
-* get basic lands sorting to proper color
-* show both colors for dual color cads
-* styling
-* video
-* add mana cost to card data and replace brackets and symbols with readable words or numbers (ie Tap, Mountain, Swamp).
-* add edition to card data
-* fix filter on color.  currently looks for the color as a string.  make it look only at the color key:value.
-* collection graph
