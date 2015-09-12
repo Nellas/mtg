@@ -46,7 +46,7 @@ var app = angular.module('mtg').controller('deckCtrl', function($scope, mainServ
         return $scope.displayedImage = card.image;
     };
 
-    // I create an array of all cards including duplicates, then shuffle that array and "draw" 7 cards.
+    // Create an array of all cards including duplicates, then shuffle that array and "draw" 7 cards.
     $scope.drawHand = function(deck) {
         $scope.sampleHand = [];
         var fullDeck = [];
